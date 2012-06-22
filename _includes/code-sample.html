@@ -1,0 +1,48 @@
+<pre><span class="kt">int</span> main() 
+  helper := FileHelper new <span class="c1">// declare variable "helper" via type inference</span>
+
+  files := []
+  files addObject: (helper openFile: <span class="s">'readme.txt'</span>)
+
+  <span class="k">for</span> FileHandle handle <span class="k">in</span> files
+    Log( <span class="s">'File descriptor is %@'</span>, (<span class="kt">Number</span>)(handle fileDescriptor) )
+    handle closeFile
+
+  <span class="k">return</span> 0
+
+<span class="k">interface</span> FileHelper : <span class="kt">Object</span>
+
+  <span class="k">property</span> (<span class="k">readonly</span>)
+    <span class="kt">String</span> volumeName
+    <span class="kt">String</span> volumeFormat
+
+  + pathStringWithComponents: <span class="kt">Array</span>, <span class="k">return</span> <span class="kt">String</span>
+
+  openFile: <span class="kt">String</span>, [withPermissions: <span class="kt">String</span>], <span class="k">return</span> <span class="kt">FileHandle</span>
+
+<span class="k">end</span>
+
+<span class="k">implementation</span> <span class="kt">FileHelper</span>
+
+  <span class="k">private</span>
+    <span class="kt">int</span> iBytesUsed
+    <span class="kt">int</span> iBytesFree
+
+  + pathStringWithComponents: <span class="kt">Array</span>, <span class="k">return</span> <span class="kt">String</span>
+    fullPathName := <span class="s">''</span>
+    <span class="k">for</span> <span class="kt">String</span> component <span class="k">in</span> components
+      fullPathName << <span class="s">'/'</span> + component
+    <span class="k">return</span> fullPathName
+
+  openFile: <span class="kt">String</span> path, withPermissions: <span class="kt">String</span> = <span class="s">'readonly'</span>, <span class="k">return</span> <span class="kt">FileHandle</span>
+    <span class="kt">FileHandle</span> handle = <span class="no">nil</span>
+    <span class="k">if</span> permissions == <span class="s">'readonly'</span> <span class="k">or</span> permissions == <span class="s">'r'</span>
+      handle = FileHandle fileHandleForReadingAtPath: path
+    <span class="k">else if</span> permissions == <span class="s">'readwrite'</span> <span class="k">or</span> permissions == <span class="s">'rw'</span>
+      handle = FileHandle fileHandleForUpdatingAtPath: path
+    <span class="k">return</span> handle
+
+<span class="k">end</span>
+
+</pre>
+

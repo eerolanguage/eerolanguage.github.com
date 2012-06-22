@@ -1,0 +1,4 @@
+```ruby
+i := MutableString new
+```
+
