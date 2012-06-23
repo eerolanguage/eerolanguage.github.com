@@ -1,23 +1,23 @@
 
-Language Features
-=================
-
 General code structure
 ----------------------
 
-### Optional semicolons
+<a name="optionalsemicolons"></a>
+### Optional semicolons 
 
 Semicolons serve the same general purpose in Eero as they do in C/Objective-C. That is, they terminate and separate statements and declarations. However, with rare exception, they're optional in Eero. As in Python and Ruby, statements generally end with newlines, but the parser will also handle unambiguous statement continuations, such as dangling commas or arithmetic operators, onto subsequent lines. The parser handles other situations as well.
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
-### Off-side rule (indentation indicates block scope)
+<a name="offsiderule"></a>
+### Off-side rule (indentation indicates block scope) 
 
 Like Python (and various other languages), Eero adheres to the [off-side](http://en.wikipedia.org/wiki/Off-side_rule) rule for block scope. The compiler doesn't dictate the level of indentation, but it must remain consistent for consecutive lines in a particular block. This mechanism completely supplants the use of curly braces as block delimiters.
 
 _Motivation_: readability, safety, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself), [WYSIWYG](http://en.wikipedia.org/wiki/Wysiwyg)
 
-### Optional parentheses around conditions
+<a name="optionalparens"></a>
+### Optional parentheses around conditions 
 
 Eero doesn't require the first level of parentheses around conditional expressions. This applies to _if_, _for_, _while_, _switch_, _catch_, etc..
 
@@ -28,7 +28,8 @@ if counter >= 0
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
-### Message passing without square brackets
+<a name="nomessagebrackets"></a>
+### Message passing without square brackets 
 
 In Eero, you send messages to objects or classes without using square brackets. As a result, you separate parameters using commas. Furthermore, you can group message-passing expressions with parentheses, just as you can any other expressions.
 
@@ -43,7 +44,8 @@ _Motivation_: readability
 Keywords
 --------
 
-### Objective-C keywords without '@'
+<a name="noatkeywords"></a>
+### Objective-C keywords without '@' 
 
 Eero recognizes Objective-C keywords as regular language keywords. They don't need to be preceded by an '@' character.
 
@@ -53,7 +55,8 @@ Eero recognizes Objective-C keywords as regular language keywords. They don't ne
 </div>
 _Motivation_: readability
 
-### Logical and bitwise operators _and_, _or_, _not_, etc.
+<a name="booleannames"></a>
+### Logical and bitwise operators _and_, _or_, _not_, etc. 
 
 Eero recognizes the alternative logical and bitwise operators introduced in C++. (They're also available to standard C through the inclusion of header iso646.h, introduced to the C90 standard in 1995.)
 
@@ -64,7 +67,8 @@ if ready and initialized
 
 _Motivation_: readability
 
-### The goto statement is illegal
+<a name="nogoto"></a>
+### The goto statement is illegal 
 
 In Eero, _goto_ is still a recognized keyword but its use is forbidden and will result in a compilation error.
 
@@ -75,6 +79,7 @@ Namespaces
 
 Neither C nor Objective-C supports namespaces, relying on unique prefixes to prevent symbol collisions. Eero provides a backward-compatible way of obtaining some of the readability benefits of namespaces.
 
+<a name="nsprefix"></a>
 ### Built-in symbol search on names with the "NS" prefix
 
 When looking to resolve symbol names, the Eero compiler first checks the name as-is, and if not found, tries again with the "NS" prefix. This means you can use the types, functions, non-macro constants, and so on found throughout the Foundation and Cocoa frameworks without "NS". For example, anywhere a class name is used, you can use "String" instead of "NSString".
@@ -86,6 +91,7 @@ When looking to resolve symbol names, the Eero compiler first checks the name as
 
 _Motivation_: readability
 
+<a name="userprefixes"></a>
 ### User-defined prefix namespaces
 
 In addition to the built-in "NS" prefix, users can declare their own prefixes to be applied to any scope (file, method, function, etc.). This is done through the *using* *prefix* declaration. For example, to find symbol names without providing an explicit "AB" prefix (from the AddressBook framework), use the following:
@@ -102,6 +108,7 @@ _Motivation_: readability
 Variables and literals
 ----------------------
 
+<a name="objectsarepointers"></a>
 ### Object declarations are assumed to be pointers
 
 Since Objective-C objects are always references (pointers to objects), it is never valid to define object variables as anything but pointers. Instead of issuing an error, Eero implicitly treats all declarations of a class type as a pointer to that type. This means that no associated asterisk is needed.
@@ -113,6 +120,7 @@ Since Objective-C objects are always references (pointers to objects), it is nev
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="typeinference"></a>
 ### Local type inference
 
 You can declare and initialize local variables using the Eero-specific **```:=```** operator. For example, the following code declares an integer initialized with a value:
@@ -136,6 +144,7 @@ int i = 100
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself), safety (reduces temptation to use types like _id_)
 
+<a name="noshadowing"></a>
 ### No variable shadowing
 
 Partly due to the type inference feature, and partly as a general code safety and readability improvement, the compiler does not permit variable shadowing. Attempting to re-declare a variable of the same name in an inner scope will result in a compilation error.
@@ -148,6 +157,7 @@ if isReady
 
 _Motivation_: safety, readability
 
+<a name="stringliterals"></a>
 ### NSString literals using single quotes
 
 In Eero, you enclose Objective-C/Foundation string literals in single quotes, with no preceding '@' symbol:
@@ -158,6 +168,7 @@ mynsstring := 'Hello, world'
 
 _Motivation_: readability
 
+<a name="noatliterals"></a>
 ### No '@' needed for array and dictionary literals
 
 As in Objective-C, you can express array and dictionary literals with square and curly brackets, respectively. However, no '@' symbol is needed:
@@ -170,6 +181,7 @@ mydict := { 'a' : 'A', 'b' : 'B', 'c', 'C' }
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="mutableliterals"></a>
 ### Mutable array and dictionary literals
 
 Non-empty array and dictionary literals are immutable. However, unlike Objective-C, empty literals are the mutable versions of their classes, allowing:
@@ -181,6 +193,7 @@ mydict['a'] = 'A'
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="inferrednils"></a>
 ### Variable definitions using type inference and *nil* or *Nil* 
 
 If used with a *nil* or *Nil*, inferred variable types are of type *id* or *Class*, respectively:
@@ -193,6 +206,7 @@ If used with a *nil* or *Nil*, inferred variable types are of type *id* or *Clas
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="selectorliterals"></a>
 ### Selector and protocol literals
 
 While you can still use the *selector* compiler directive, Eero recognizes selector literals enclosed in vertical bars:
@@ -210,6 +224,7 @@ if myobject conformsToProtocol: <Coding>
 
 _Motivation_: readability
 
+<a name="rangeliterals"></a>
 ### NSRange literals (and expressions) using '..' or '...'
 
 You can create range literals with integer values (or variables) separated by an ellipsis, which expresses an (inclusive) sequence stored as an NSRange struct. For example:
@@ -222,6 +237,7 @@ Note that Eero interprets both two and three consecutive periods as an ellipsis.
 
 _Motivation_: readability
 
+<a name="rangeloops"></a>
 ### NSRange variables and literals in *for* *in* loops
 
 You can use variable or literal ranges directly in *for-in* loops:
@@ -236,43 +252,49 @@ for int i in 0 .. 10
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="underscores"></a>
 ### Underscores permitted in numeric literals
 
 For improved readability, underscores can appear within numeric literals. The compiler ignores the underscores, which do not modify the value in any way. Underscores cannot be the first or last character of the literal. Some examples:
 
 <div class="highlight">
 <pre><span class="kt">const</span> TimeInMilliseconds := <span class="mi">30_000</span>  <span class="c1">// 30 seconds</span>
-<span class="kt">const long int</span> MinimumBalanceInCents = <span class="mi">100_00</span> <span class="c1">// 100 dollars</span>
+<span class="kt">const int</span> MinimumBalanceInCents = <span class="mi">100_00</span> <span class="c1">// 100 dollars</span>
 <span class="kt">const</span> RGBASolidWhite := <span class="mi">0x_FF_FF_FF_FF</span>
 <span class="kt">const long double</span> Pi = <span class="mi">3.141_592_653_589</span></pre>
 </div>
 
 _Motivation_: readability
 
+<a name="strictenums"></a>
 ### Stricter *enum* type checking
 
 Variables of *enum* types have stronger type checking than in standard C/Objective-C. Without an explicit cast, they can only be assigned values defined for their specific *enum* type. Since the *enum* values carry type information, they can also be used with type inference.
 
-```c++
-enum RGBColors { RED, GREEN, BLUE }
-color := RED // inferred to enum type RGBColors
+<div class="highlight">
+<pre><span class="k">enum</span> <span class="n">RGBColors</span> <span class="p">{</span> <span class="no">RED</span><span class="p">,</span> <span class="no">GREEN</span><span class="p">,</span> <span class="no">BLUE</span> <span class="p">}</span>
+<span class="n">color</span> <span class="o">:=</span> <span class="no">RED</span> <span class="c1">// inferred to enum type RGBColors</span>
 
-color = GREEN // valid
-color = 0 // compiler error
+<span class="n">color</span> <span class="o">=</span> <span class="no">GREEN</span> <span class="c1">// valid</span>
+<span class="n">color</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">// compiler error</span>
 
-enum CMYKColors { CYAN, MAGENTA, YELLOW, BLACK }
-color = MAGENTA // compiler error
-```
+<span class="k">enum</span> <span class="n">CMYKColors</span> <span class="p">{</span> <span class="no">CYAN</span><span class="p">,</span> <span class="no">MAGENTA</span><span class="p">,</span> <span class="no">YELLOW</span><span class="p">,</span> <span class="no">BLACK</span> <span class="p">}</span>
+<span class="n">color</span> <span class="o">=</span> <span class="no">MAGENTA</span> <span class="c1">// compiler error</span>
+</pre>
+</div>
+
 
 Implicit conversion from an *enum* value to an integer type is still allowed, however:
 
-```c++
-int value = RED // valid
-```
+<div class="highlight">
+<pre><span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="no">RED</span> <span class="c1">// valid</span>
+</pre>
+</div>
 
 Classes
 -------
 
+<a name="noparamsmethods"></a>
 ### Method parameter type names are not enclosed in parentheses
 
 In Eero, you do not enclose method parameter types in parentheses. However, like their message-sending counterparts, you do separate parameters with commas.
@@ -286,6 +308,7 @@ In Eero, you do not enclose method parameter types in parentheses. However, like
 
 _Motivation_: readability
 
+<a name="methodvardefaults"></a>
 ### Method parameters have default variable names
 
 If omitted, Eero generates argument variable names derived from their selectors. They're determined by the following rules, listed by most to least commonly encountered:
@@ -307,6 +330,7 @@ If omitted, Eero generates argument variable names derived from their selectors.
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="methodreturns"></a>
 ### Method return type specified by trailing *return*, *void* by default if omitted
 
 To specify a return type, use a comma followed by the *return* keyword and a type. Unlike Objective-C, if unspecified, there is no return value for the method. This does not affect Foundation, Cocoa, or any other imported legacy headers.
@@ -321,6 +345,7 @@ To specify a return type, use a comma followed by the *return* keyword and a typ
 
 _Motivation_: readability, [WYSIWYG](http://en.wikipedia.org/wiki/Wysiwyg)
 
+<a name="instancemethods"></a>
 ### Methods are instance methods by default
 
 Like standard Objective-C, whether a method is an instance or class method is determined by a preceding '-' or '+', respectively. However, the '-' is optional for Eero.
@@ -336,6 +361,7 @@ Like standard Objective-C, whether a method is an instance or class method is de
 
 _Motivation_: readability (via sane defaults)
 
+<a name="optionalparams"></a>
 ### Optional parameters and default arguments
 
 Eero supports a shorthand notation for optional method parameters and default arguments. The Objective-C way of doing this -- defining a set of methods, some of which omit parameters -- is still possible, and can be mixed freely with this notation.
@@ -359,7 +385,7 @@ For the implementation, the default values of the optional parameters are assign
       <span class="n">handle</span> <span class="p">:</span><span class="o">=</span> <span class="nb">nil</span>
       <span class="k">if</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s">'r'</span>
          <span class="n">handle</span> <span class="o">=</span> <span class="n">FileHandle</span> <span class="n">fileHandleForReadingAtPath</span><span class="p">:</span> <span class="n">file</span>
-      <span class="k">else</span> <span class="k">if</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s">'w'</span> <span class="ow">or</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s">'rw'</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s">'w'</span> <span class="k">or</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s">'rw'</span>
          <span class="n">handle</span> <span class="o">=</span> <span class="n">FileHandle</span> <span class="n">fileHandleForWritingAtPath</span><span class="p">:</span> <span class="n">file</span>
       <span class="k">return</span> <span class="n">handle</span>
 <span class="k">end</span>
@@ -395,6 +421,7 @@ Like all other Eero features, this does not introduce any binary breaks. This is
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="defaultreturns"></a>
 ### Default return expression
 
 You can specify a default return expression for a method definition by providing an '=' (equal) after the return type, followed by an expression:
@@ -420,6 +447,7 @@ If no *return* statement is encountered in the method body, the method will retu
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="nocurlyvars"></a>
 ### No curly braces needed around member-variable declarations
 
 Member variables, while still requiring placement at the beginning of an interface or implementation, don't need to be surrounded by curly braces:
@@ -437,6 +465,7 @@ Member variables, while still requiring placement at the beginning of an interfa
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="groupproperties"></a>
 ### Declarations of properties of the same type can be grouped together
 
 You can use a single property specification with a group of declarations. The declarations must follow any member variables.
@@ -461,6 +490,7 @@ Object operators
 
 Eero supports a limited set of common operators for Objective-C objects. All operands involved must be objects. The operators are, in fact, aliases for certain methods. However, the operators follow the same precedence rules as their primitive-data-type counterparts.
 
+<a name="equalityoperators"></a>
 ### Built-in equality and inequality comparison operators
 
 For all objects, the comparison operators '==' (equals) and '!=' (not equal) map to the *isEqual* method. The result is negated for '!='. This replaces the low-level address comparison used in standard Objective-C for two objects. This allows valid comparisons of the form:
@@ -478,7 +508,8 @@ You can still perform explicit address comparisons by casting both operands to *
 
 _Motivation_: readability, [WYSIWYG](http://en.wikipedia.org/wiki/Wysiwyg)
 
-### Built-in '+' (binary version) and '<<' operators
+<a name="stringplus"></a>
+### Built-in '+' (binary version) and '<<' string operators
 
 When the '+' binary operator is used, *stringByAppendingString* will be sent to instances of classes or protocols that respond to it (mainly NSString and its subclasses):
 
@@ -498,6 +529,7 @@ mystring << 'Hello, World'
 
 _Motivation_: readability
 
+<a name="binaryoperators"></a>
 ### Binary operators
 
 The following chart shows the supported object binary operators and resulting methods. In the cases of '+' and '<<', defining these methods for a particular class overrides the built-in versions.
@@ -517,12 +549,14 @@ The following chart shows the supported object binary operators and resulting me
 _Motivation_: readability
 
 
+<a name="subscripts"></a>
 ### Array and dictionary subscript operators with integer and object indexes
 
 Eero supports the same array and dictionary object subscript operators ('[]') found in Objective-C. For platforms that support them, these operators acts as aliases for methods **IndexedSubscript*, **KeyedSubscript*, etc.. However, on systems with older versions of the Foundation library that are missing this family of methods, Eero falls back to *objectAtIndex*, *objectForKey*, etc..
 
 _Motivation_: readability, backward compatibility
 
+<a name="rangesubscripts"></a>
 ### Object subscript operators with NSRange indexes
 
 Objects indexed using '[NSRange]' that are derived from classes or protocols that respond to method *substringWithRange* (mainly NSString and its subclasses) will be sent that message. This allows concise string slices:
@@ -551,6 +585,7 @@ Special object casts (boxing and unboxing)
 mystring := (String) someObject  // same as "(String*) someObject"
 ```
 
+<a name="boxing"></a>
 ### Converting primitive data types to objects (boxing)
 
 "Casting" a primitive data type to an Objective-C class results in the creation of an object of that type (boxing), implicitly using the appropriate method to do so. For example:
@@ -575,6 +610,7 @@ There are no implicit conversions from primitive to object.
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="unboxing"></a>
 ### Converting objects to primitive data types (unboxing)
 
 "Casting" an Objective-C object to a primitive data type results in a value extraction (unboxing), implicitly using the appropriate method to do so:
@@ -615,6 +651,7 @@ myblock := ^(int x, int y)
    return x + y
 ```
 
+<a name="compactblocks"></a>
 ### Compact blocks
 
 Eero supports a compact form for blocks that only requires a single expression or *return* statement. Within the parentheses following the '^' (caret), a vertical bar separates the parameters from the expression or *return* statement. Aside from a *return*, no statements are allowed, so condition statements and loops cannot be present.
@@ -632,6 +669,7 @@ descriptions := mylist mapWith: ^(id element | return element description)
 
 _Motivation_: readability
 
+<a name="nestedfunctions"></a>
 ### Nested functions (*const* blocks)
 
 Eero supports constructions that look and act like nested functions but are semantically *const* blocks. These can be defined in methods, functions, or other blocks, and the normal block-closure rules apply. They can also be defined within *if*, *else*, *while*, *for*, etc. indented bodies. It is possible to call them directly, like a normal function, or pass them as block arguments.
@@ -656,6 +694,7 @@ The *switch* statement
 
 While being very similar in structure (and the same in performance) to the *switch* statement in the C language family, Eero makes various changes to the construct.
 
+<a name="nofallthrough"></a>
 ### No fall-through 
 
 Eero *case* statements do **not** fall through, and thus do not require break statements. The ':' (colon) following the *case* value is optional, but the newline and indented code block is not. (The usual off-side rules apply.) Furthermore, these blocks automatically form declaration scopes, allowing declarations and definitions local to these scopes.
@@ -678,7 +717,8 @@ The loss of convenience due to the absence of fall-through is compensated for by
 
 _Motivation_: safety, readability
 
-### Comma-separated lists of cases
+<a name="caselists"></a>
+### Comma-separated lists of cases <a name="commacases"></a>
 
 Cases can be grouped together as comma-separated lists of values:
 
@@ -695,6 +735,7 @@ These can be freely mixed with single and ranged *case* values within the same *
 
 _Motivation_: safety, readability
 
+<a name="caseranges"></a>
 ### Case-value ranges
 
 You can specify a set of *case* values using an ellipsis between the first and last items in a consecutive range of values:
@@ -714,6 +755,7 @@ These can be freely mixed with single and comma-separated list values within the
 
 _Motivation_: safety, readability
 
+<a name="reserved"></a>
 Reserved symbols for future features
 ------------------------------------
 

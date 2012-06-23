@@ -1,4 +1,0 @@
-```ruby
-i := MutableString new
-```
-

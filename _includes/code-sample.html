@@ -1,39 +1,41 @@
-<pre><span class="kt">int</span> main() 
-  helper := FileHelper new <span class="c1">// declare variable "helper" via type inference</span>
+<pre class="nocodebox"><span class="kt">int</span> main() 
+  helper := FileHelper new <span class="c1"> // declare variable "helper" via type inference</span>
 
-  files := []
-  files addObject: (helper openFile: <span class="s">'readme.txt'</span>)
+  files := [] <span class="c1"> // empty array literal implies mutable</span>
+  files addObject: (helper openFile: <span class="s">'readme.txt'</span>) <span class="c1"> // can group message in parens</span>
 
-  <span class="k">for</span> FileHandle handle <span class="k">in</span> files
+  <span class="k">for</span> FileHandle handle <span class="k">in</span> files <span class="c1"> // all objects are pointers, so no '*' needed</span>
     Log( <span class="s">'File descriptor is %@'</span>, (<span class="kt">Number</span>)(handle fileDescriptor) )
     handle closeFile
 
-  <span class="k">return</span> 0
+  <span class="k">return</span> 0 <span class="c1"> // semicolons are optional almost everywhere</span>
 
-<span class="k">interface</span> FileHelper : <span class="kt">Object</span>
+<span class="k">interface</span> FileHelper : <span class="kt">Object</span></span> <span class="c1"> // "Object" is the same as "NSObject"</span>
 
   <span class="k">property</span> (<span class="k">readonly</span>)
-    <span class="kt">String</span> volumeName
-    <span class="kt">String</span> volumeFormat
+    <span class="kt">String</span> volumeName  <span class="c1">  // both are readonly properties</span>
+    <span class="kt">String</span> volumeFormat <span class="c1"> //</span>
 
-  + pathStringWithComponents: <span class="kt">Array</span>, <span class="k">return</span> <span class="kt">String</span>
+  + pathStringWithComponents: <span class="kt">Array</span>, <span class="k">return</span> <span class="kt">String</span> <span class="c1"> // class method</span>
 
-  openFile: <span class="kt">String</span>, [withPermissions: <span class="kt">String</span>], <span class="k">return</span> <span class="kt">FileHandle</span>
+  openFile: <span class="kt">String</span>, [withPermissions: <span class="kt">String</span>], <span class="k">return</span> <span class="kt">FileHandle</span> <span class="c1"> // instance method</span>
 
 <span class="k">end</span>
 
-<span class="k">implementation</span> <span class="kt">FileHelper</span>
+<span class="k">implementation</span> <span class="kt">FileHelper</span> <span class="c1"> // no '@' needed for objc keywords</span>
 
-  <span class="k">private</span>
+  <span class="k">private</span> <span class="c1"> // no "{}" needed for instance variables</span>
     <span class="kt">int</span> iBytesUsed
     <span class="kt">int</span> iBytesFree
 
+  <span class="c1">// "components" is the default arg variable name for "pathStringWithComponents"</span>
   + pathStringWithComponents: <span class="kt">Array</span>, <span class="k">return</span> <span class="kt">String</span>
-    fullPathName := <span class="s">''</span>
+    fullPathName := <span class="s">''</span> <span class="c1"> // empty objc string literal implies mutable</span>
     <span class="k">for</span> <span class="kt">String</span> component <span class="k">in</span> components
-      fullPathName << <span class="s">'/'</span> + component
+      fullPathName << <span class="s">'/'</span> + component <span class="c1"> // string concatenation with '+' and '<<'</span>
     <span class="k">return</span> fullPathName
 
+  <span class="c1">// "withPermissions" was declared optional, so default value is defined here</span>
   openFile: <span class="kt">String</span> path, withPermissions: <span class="kt">String</span> = <span class="s">'readonly'</span>, <span class="k">return</span> <span class="kt">FileHandle</span>
     <span class="kt">FileHandle</span> handle = <span class="no">nil</span>
     <span class="k">if</span> permissions == <span class="s">'readonly'</span> <span class="k">or</span> permissions == <span class="s">'r'</span>

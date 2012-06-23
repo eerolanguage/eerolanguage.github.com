@@ -1,13 +1,18 @@
 ---
-layout: default
+layout: documentation
 title: the eero programming language - documentation
 short-title: documentation
 position: 2
 ---
 
-<div class="content">
-  {% for post in site.posts %}
-  {{ post.content }}
-  {% endfor %}
-</div>
+<div id="right">
+  <div class="toc">
+  {{ site.posts[0].content }}
+  </div>
+</div>          
+<div id="left">
+  <div class="content">
+  {{ site.posts[1].content }}
+  </div>
+</div>    
 
