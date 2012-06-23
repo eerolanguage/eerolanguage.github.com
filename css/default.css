@@ -141,7 +141,7 @@ h3 {
   top: 1em;
   bottom: 2em;
   padding-bottom: inherit;
-  min-height: 62em;
+  min-height: 64em;
 
   border: inherit;
   border-radius: 0.5em;
@@ -183,7 +183,8 @@ h3 {
 
 .content a {
   text-decoration: none;
-  color: #33A8E5;
+/*  color: #33A8E5;*/
+  color: #007CC6;
 }
 
 .content a:hover {
@@ -196,7 +197,7 @@ h3 {
 
 .toc a {
   text-decoration: none;
-  color: #0076AE;
+  color: #007CC6;
 }
 
 .toc a:hover {

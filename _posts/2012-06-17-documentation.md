@@ -386,7 +386,7 @@ For the implementation, the default values of the optional parameters are assign
       <span class="k">if</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s">'r'</span>
          <span class="n">handle</span> <span class="o">=</span> <span class="n">FileHandle</span> <span class="n">fileHandleForReadingAtPath</span><span class="p">:</span> <span class="n">file</span>
       <span class="k">else</span> <span class="k">if</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s">'w'</span> <span class="k">or</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s">'rw'</span>
-         <span class="n">handle</span> <span class="o">=</span> <span class="n">FileHandle</span> <span class="n">fileHandleForWritingAtPath</span><span class="p">:</span> <span class="n">file</span>
+         <span class="n">handle</span> <span class="o">=</span> <span class="n">FileHandle</span> <span class="n">fileHandleForUpdatingAtPath</span><span class="p">:</span> <span class="n">file</span>
       <span class="k">return</span> <span class="n">handle</span>
 <span class="k">end</span>
 </pre>
@@ -431,7 +431,7 @@ You can specify a default return expression for a method definition by providing
    <span class="k">if</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s1">'r'</span>
       <span class="k">return</span> <span class="n">FileHandle</span> <span class="n">fileHandleForReadingAtPath</span><span class="o">:</span> <span class="n">file</span>
    <span class="k">else</span> <span class="k">if</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s1">'w'</span> <span class="k">or</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s1">'rw'</span>
-      <span class="k">return</span> <span class="o">=</span> <span class="n">FileHandle</span> <span class="n">fileHandleForWritingAtPath</span><span class="o">:</span> <span class="n">file</span>
+      <span class="k">return</span> <span class="o">=</span> <span class="n">FileHandle</span> <span class="n">fileHandleForUpdatingAtPath</span><span class="o">:</span> <span class="n">file</span>
 </pre>
 </div>
 
