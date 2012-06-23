@@ -62,7 +62,7 @@ nav li a {
   padding-right: 0em;
   width: 10em;
 
-  font-family: Eurostile;
+  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
   font-weight: bold;
   font-size: 0.9em;
   text-align: center;
@@ -86,7 +86,7 @@ nav li a {
 
 
 h0 {
-  font-family: Eurostile;
+  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
   font-weight: normal;
   font-size: 8em;
   color:#5C360E;
@@ -95,14 +95,14 @@ h0 {
 }
 
 h1 {
-  font-family: Eurostile;
+  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
   font-weight: bold;
   font-size: 2em;
   color:#5C360E;
 }
 
 h2 {
-  font-family: Eurostile;
+  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
   font-weight: normal;
   font-size: 1.6em;
   color:#5C360E;
@@ -120,7 +120,7 @@ h3 {
   position: absolute;
   top: 0.4em;
   padding-left: 0.4em;
-  font-family: Eurostile;
+  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
   font-weight: normal;
   font-size: 1.6em;
   color: #444444;
@@ -130,7 +130,7 @@ h3 {
   position: absolute;
   top: 1.5em;
   left: 6.5em;
-  font-family: Eurostile;
+  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
   font-weight: normal;
   font-size: 3em;
   color: #333333;
