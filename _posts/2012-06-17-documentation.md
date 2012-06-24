@@ -600,7 +600,7 @@ Special object casts (boxing and unboxing)
 **Note:** Although not directly related to these conversions, casting an object variable to a class (without the trailing "\*") simply casts the object to the target class type. This is in line with Eero's general class-name policy:
 
 <div class="highlight">
-<pre><span class="n">mystring</span> <span class="n">:=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="n">someObject</span>  <span class="c1">// same as "(String*) someObject"</span>
+<pre><span class="n">mystring</span> <span class="n">:=</span> <span class="p">(</span><span class="kt">String</span><span class="p">)</span> <span class="n">someObject</span>  <span class="c1">// same as "(String*) someObject"</span>
 </pre>
 </div>
 
