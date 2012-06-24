@@ -244,6 +244,10 @@ tr:nth-child(2n) {
   background-color: #f8f8f8;
 }
 
+.centered-cell {
+  text-align:center;
+}
+
 #furniture {
   width: 80%;
   margin-left: auto;
