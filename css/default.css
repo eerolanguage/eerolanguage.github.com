@@ -244,6 +244,25 @@ tr:nth-child(2n) {
   background-color: #f8f8f8;
 }
 
+#furniture {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
+}
+
+#furniture img {
+  width: 100%;
+  display: block;
+}
+
+#furniture figcaption {
+  padding-top: 0.75em;
+  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
+  text-align: right;
+}
+
+
 #copyright {
   position: relative;
   bottom: -3.0em;
