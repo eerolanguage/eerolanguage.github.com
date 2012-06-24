@@ -222,14 +222,14 @@ _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_you
 While you can still use the *selector* compiler directive, Eero recognizes selector literals enclosed in vertical bars:
 
 <div class="highlight">
-<pre><span class="n">myobject</span> <span class="nl">performSelector:</span> <span class="o">|</span><span class="nl">applicationReady:</span><span class="o">|</span><span class="p">,</span> <span class="nl">withObject:</span> <span class="nb">nil</span><span class="p">,</span> <span class="nl">afterDelay:</span> <span class="mi">0</span>
+<pre><span class="n">myobject</span> <span class="nl">performSelector:</span> <span class="s">|</span><span class="s">applicationReady:</span><span class="s">|</span><span class="p">,</span> <span class="nl">withObject:</span> <span class="nb">nil</span><span class="p">,</span> <span class="nl">afterDelay:</span> <span class="mi">0</span>
 </pre>
 </div>
 
 Enclose protocol literals in angle brackets:
 
 <div class="highlight">
-<pre><span class="k">if</span> <span class="n">myobject</span> <span class="nl">conformsToProtocol:</span> <span class="o">&lt;</span><span class="n">Coding</span><span class="o">&gt;</span>
+<pre><span class="k">if</span> <span class="n">myobject</span> <span class="nl">conformsToProtocol:</span> <span class="s">&lt;</span><span class="s">Coding</span><span class="s">&gt;</span>
    <span class="p">...</span>
 </pre>
 </div>
