@@ -81,7 +81,7 @@ Object operators
 
 ### [Built-in '+' (binary version) and '<<' string operators](#stringplus)
 
-### [Binary operators](#binaryoperators)
+### [Binary operators (effectively, operator overloading)](#binaryoperators)
 
 ### [Array and dictionary subscript operators with integer and object indexes](#subscripts)
 

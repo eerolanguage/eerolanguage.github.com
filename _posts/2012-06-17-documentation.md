@@ -546,7 +546,7 @@ When the '<<' binary operator is used, *appendString* will be sent to instances 
 _Motivation_: readability
 
 <a name="binaryoperators"> </a>
-### Binary operators
+### Binary operators (effectively, operator overloading)
 
 The following chart shows the supported object binary operators and resulting methods. In the cases of '+' and '<<', defining these methods for a particular class overrides the built-in versions.
 
