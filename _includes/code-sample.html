@@ -16,9 +16,10 @@
     <span class="kt">String</span> volumeName  <span class="c1">  // both are readonly properties</span>
     <span class="kt">String</span> volumeFormat <span class="c1"> //</span>
 
-  + pathStringWithComponents: <span class="kt">Array</span>, <span class="k">return</span> <span class="kt">String</span> <span class="c1"> // class method</span>
+  + pathStringWithComponents: <span class="kt">Array</span>, <span class="k">return</span> <span class="kt">String</span> <span class="c1"> // a class method</span>
 
-  openFile: <span class="kt">String</span>, [withPermissions: <span class="kt">String</span>], <span class="k">return</span> <span class="kt">FileHandle</span> <span class="c1"> // instance method</span>
+  <span class="c1">// An instance method. The brackets make parameter "withPermissions" optional</span>
+  openFile: <span class="kt">String</span>, [withPermissions: <span class="kt">String</span>], <span class="k">return</span> <span class="kt">FileHandle</span>
 
 <span class="k">end</span>
 
@@ -35,7 +36,7 @@
       fullPathName << <span class="s">'/'</span> + component <span class="c1"> // string concatenation with '+' and '<<'</span>
     <span class="k">return</span> fullPathName
 
-  <span class="c1">// "withPermissions" was declared optional, so default value is defined here</span>
+  <span class="c1">// "withPermissions" was declared optional, so a default value is defined here</span>
   openFile: <span class="kt">String</span> path, withPermissions: <span class="kt">String</span> = <span class="s">'readonly'</span>, <span class="k">return</span> <span class="kt">FileHandle</span>
     <span class="kt">FileHandle</span> handle = <span class="no">nil</span>
     <span class="k">if</span> permissions == <span class="s">'readonly'</span> <span class="k">or</span> permissions == <span class="s">'r'</span>
