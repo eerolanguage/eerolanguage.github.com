@@ -556,10 +556,13 @@ The following chart shows the supported object binary operators and resulting me
 <tr><td class="centered-cell">-</td><td>minus</td><td>includes support for -=</td></tr>	
 <tr><td class="centered-cell">*</td><td>multipliedBy</td><td>includes support for *=</td></tr>	
 <tr><td class="centered-cell">/</td><td>dividedBy</td><td>includes support for /=</td></tr>	
-<tr><td class="centered-cell">&lt;</td><td>isLess</td><td></td></tr>	
+<tr><td class="centered-cell">%</td><td>modulo</td><td>includes support for %=</td></tr>	
+<tr><td class="centered-cell">&lt;</td><td>isLess</td><td></td></tr>
 <tr><td class="centered-cell">&gt;</td><td>isGreater</td><td></td></tr>	
 <tr><td class="centered-cell">&lt;=</td><td>isGreater</td><td>result is !(left isGreater: right)</td></tr>	
 <tr><td class="centered-cell">&gt;=</td><td>isLess</td><td>result is !(left isLess: right)</td></tr>	
+<tr><td class="centered-cell">&lt;&lt;</td><td>shiftLeft</td><td></td></tr>	
+<tr><td class="centered-cell">&gt;&gt;</td><td>shiftRight</td><td></td></tr>
 </table>
 
 _Motivation_: readability
