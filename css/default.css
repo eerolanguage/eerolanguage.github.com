@@ -142,7 +142,7 @@ h3 {
   top: 1em;
   bottom: 2em;
   padding-bottom: inherit;
-  min-height: 65em;
+  min-height: 75em;
 
   border: inherit;
   border-radius: 0.5em;
@@ -213,7 +213,7 @@ h3 {
 pre {
   font-family: Menlo, Consolas, Monaco, "Liberation Mono", Courier, monospace;
   font-size: 0.8em;
-  line-height: 1.4;
+  line-height: 1.6;
   overflow: hidden;
   color: #333;
   background-color: #F8F8F8;
