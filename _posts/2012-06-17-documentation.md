@@ -22,7 +22,7 @@ _Motivation_: readability, safety, [DRY](http://en.wikipedia.org/wiki/Don%27t_re
 Eero doesn't require the first level of parentheses around conditional expressions. This applies to _if_, _for_, _while_, _switch_, _catch_, etc..
 
 <div class="highlight">
-<pre><span class="k">if</span> <span class="n">counter</span> <span class="n">&gt;</span><span class="p">=</span> 0
+<pre><span class="k">if</span> <span class="n">counter</span> <span class="n">&gt;</span><span class="p">=</span><span class="mi"> 0</span>
    <span class="n">counter</span><span class="n">++</span>
 </pre>
 </div>
