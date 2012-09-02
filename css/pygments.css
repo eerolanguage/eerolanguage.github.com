@@ -39,7 +39,7 @@
 .nv { color: #19177C } /* Name.Variable */
 .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
 .w { color: #bbbbbb } /* Text.Whitespace */
-.mf { color: #BA2121 } /* Literal.Number.Float */
+.mf { color: #828 } /* Literal.Number.Float */
 .mh { color: #BA2121 } /* Literal.Number.Hex */
 .mi { color: #828 } /* Literal.Number.Integer */
 .mo { color: #BA2121 } /* Literal.Number.Oct */
