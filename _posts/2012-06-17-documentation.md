@@ -43,6 +43,7 @@ In Eero, you send messages to objects or classes without using square brackets. 
 
 _Motivation_: readability
 
+
 Keywords
 --------
 
@@ -784,6 +785,29 @@ You can specify a set of *case* values using an ellipsis between the first and l
 These can be freely mixed with single and comma-separated list values within the same *switch* statement.
 
 _Motivation_: safety, readability
+
+
+The preprocessor
+----------------
+
+<a name="importsincludes"> </a>
+### Direct *#import* of Eero and legacy (Objective-C and C) headers
+
+Eero code can directly import and use Eero and standard Objective-C and C header files. This is done through the Objective-C *#import* and *#include* preprocessor directives. 
+
+When the filename is enclosed in single quotes, the imported/included file is treated as an Eero file. When either angle brackets or double quotes are used, the file is treated as standard Objective-C or C. 
+
+System header files, regardless of the type of filename string literal used, are always treated as as C/Objective-C. (Please see the [Clang Compiler User's Manual](http://clang.llvm.org/docs/UsersManual.html#diagnostics_systemheader) for more details on system headers).
+
+<div class="highlight">
+<pre><span class="k">#import</span> <span class="s">&lt;Foundation/Foundation.h&gt;</span>
+<span class="k">#import</span> <span class="s">"my_objc_header.h"</span>
+<span class="k">#import</span> <span class="s">"my_c_header.h"</span>
+
+<span class="k">#import</span> <span class="s">'my_eero_header.h'</span>
+</pre>
+</div>
+
 
 <a name="reserved"> </a>
 Reserved symbols for future features

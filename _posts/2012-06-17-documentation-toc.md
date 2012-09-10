@@ -110,6 +110,10 @@ The *switch* statement
 
 ### [Case-value ranges](#caseranges)
 
+The preprocessor
+------------------------------------
+### [Direct *#import* of Eero and legacy (Objective-C and C) headers](#importsincludes)
+
 Reserved symbols for future features
 ------------------------------------
 ### [import](#reserved)
