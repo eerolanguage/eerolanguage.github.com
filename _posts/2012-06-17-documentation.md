@@ -43,7 +43,6 @@ In Eero, you send messages to objects or classes without using square brackets. 
 
 _Motivation_: readability
 
-
 Keywords
 --------
 
@@ -797,8 +796,6 @@ Eero code can directly import and use Eero and standard Objective-C and C header
 
 When the filename is enclosed in single quotes, the imported/included file is treated as an Eero file. When either angle brackets or double quotes are used, the file is treated as standard Objective-C or C. 
 
-System header files, regardless of the type of filename string literal used, are always treated as as C/Objective-C. (Please see the [Clang Compiler User's Manual](http://clang.llvm.org/docs/UsersManual.html#diagnostics_systemheader) for more details on system headers).
-
 <div class="highlight">
 <pre><span class="k">#import</span> <span class="s">&lt;Foundation/Foundation.h&gt;</span>
 <span class="k">#import</span> <span class="s">"my_objc_header.h"</span>
@@ -808,6 +805,9 @@ System header files, regardless of the type of filename string literal used, are
 </pre>
 </div>
 
+System header files, regardless of the type of filename string literal used, are always treated as as C/Objective-C. (Please see the [Clang Compiler User's Manual](http://clang.llvm.org/docs/UsersManual.html#diagnostics_systemheader) for more details on system headers).
+
+_Motivation_: backward compatibility
 
 <a name="reserved"> </a>
 Reserved symbols for future features
