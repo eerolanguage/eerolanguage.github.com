@@ -58,6 +58,8 @@ Variables and literals
 Classes
 -------
 
+### [Default superclass is NSObject](#defaultsuperclass)
+
 ### [Method parameter type names are not enclosed in parentheses](#noparamsmethods)
 
 ### [Method parameters have default variable names](#methodvardefaults)

@@ -308,6 +308,32 @@ Implicit conversion from an *enum* value to an integer type is still allowed, ho
 Classes
 -------
 
+<a name="defaultsuperclass"> </a>
+### Default superclass is NSObject
+
+When you declare a class but don't specify a superclass, NSObject is assumed.
+
+<div class="highlight">
+<pre><span class="k">interface</span> MyClass <span class="c1">// superclass is implicitly NSObject</span>
+<span class="k">end</span></pre>
+</div>
+
+Otherwise, subclassing is done in the same way as in standard Objective-C:
+
+<div class="highlight">
+<pre><span class="k">interface</span> MyStringSubclass :<span class="kt"> String</span>
+<span class="k">end</span></pre>
+</div>
+
+In the rare cases where you need to declare a new root class, specify an explicit superclass of *void*.
+
+<div class="highlight">
+<pre><span class="k">interface</span> MyRootClass :<span class="kt"> void</span>
+<span class="k">end</span></pre>
+</div>
+
+_Motivation_: readability (via sane defaults)
+
 <a name="noparamsmethods"> </a>
 ### Method parameter type names are not enclosed in parentheses
 
@@ -365,7 +391,7 @@ _Motivation_: readability, [WYSIWYG](http://en.wikipedia.org/wiki/Wysiwyg)
 Like standard Objective-C, whether a method is an instance or class method is determined by a preceding '-' or '+', respectively. However, the '-' is optional for Eero.
 
 <div class="highlight">
-<pre><span class="k">interface</span> <span class="n">MyStringClass</span> <span class="o">:</span> <span class="kt">Object</span>
+<pre><span class="k">interface</span> <span class="n">MyStringClass</span>
    <span class="n">+</span> <span class="nl">stringWithUTF8String:</span> <span class="kt">const</span> <span class="kt">char</span><span class="kt">*</span><span class="p">,</span> <span class="k">return</span> <span class="kt">instancetype</span>
    <span class="nl">initWithCString:</span> <span class="kt">const</span> <span class="kt">char</span><span class="kt">*</span><span class="p">,</span> <span class="nl">encoding:</span> <span class="kt">StringEncoding</span><span class="p">,</span> <span class="k">return</span> <span class="kt">instancetype</span>
    <span class="nl">initWithString:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">return</span> <span class="kt">instancetype</span>
@@ -385,7 +411,7 @@ There are two distinct parts to the process: flagging the parameters in the inte
 For the interface, optional parameters are enclosed in square brackets, following a common technical documentation convention:
 
 <div class="highlight">
-<pre><span class="k">interface</span> <span class="n">MyClass</span> <span class="o">:</span> <span class="kt">Object</span>
+<pre><span class="k">interface</span> <span class="n">MyClass</span>
    <span class="n">openFile</span> <span class="kt">String</span><span class="o">,</span> <span class="p">[</span><span class="n">withPermissions</span><span class="o">:</span> <span class="kt">String</span><span class="p">]</span><span class="o">,</span> <span class="n">return</span> <span class="kt">FileHandle</span>
 <span class="k">end</span>
 </pre>
@@ -425,7 +451,7 @@ The same holds for interfaces with discrete method declarations and correspondin
 Optional parameters are restricted to the second and subsequent items. However, required and optional parameters may be alternated. (Thanks to named parameters, there are no C++-like restrictions in this regard.) For example:
 
 <div class="highlight">
-<pre><span class="k">interface</span> <span class="n">MyClass</span> <span class="o">:</span> <span class="kt">Object</span>
+<pre><span class="k">interface</span> <span class="n">MyClass</span>
    <span class="nl">openFile:</span> <span class="kt">String</span><span class="p">,</span> <span class="p">[</span><span class="nl">withPermissions:</span> <span class="kt">String</span><span class="p">],</span> <span class="nl">seekToEnd:</span> <span class="kt">BOOL</span><span class="p">,</span> <span class="p">[</span><span class="nl">closeAfterReading:</span> <span class="kt">BOOL</span><span class="p">],</span> <span class="k">return</span> <span class="kt">FileHandle</span>
 <span class="k">end</span>
 </pre>
@@ -452,7 +478,7 @@ You can specify a default return expression for a method definition by providing
 If no *return* statement is encountered in the method body, the method will return the value of this expression. This also allows compact method definitions for getter-like or stubbed methods:
 
 <div class="highlight">
-<pre><span class="k">interface</span> <span class="n">MyClass </span><span class="p">:</span> <span class="kt">Object</span>
+<pre><span class="k">interface</span> <span class="n">MyClass </span>
    <span class="n">model</span><span class="p">,</span> <span class="k">return</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">'G35'</span>
    <span class="n">serialNumber</span><span class="p">,</span> <span class="k">return</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">'X344434AABC'</span>
 <span class="k">end</span>
@@ -467,7 +493,7 @@ _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_you
 Member variables, while still requiring placement at the beginning of an interface or implementation, don't need to be surrounded by curly braces:
 
 <div class="highlight">
-<pre><span class="k">interface</span> <span class="n">MyClass</span> <span class="o">:</span> <span class="kt">Object</span>
+<pre><span class="k">interface</span> <span class="n">MyClass</span>
    <span class="k">protected</span>
       <span class="kt">int</span> <span class="n">counter</span>
       <span class="kt">id</span> <span class="n">delegate</span>
@@ -485,7 +511,7 @@ _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_you
 You can use a single property specification with a group of declarations. The declarations must follow any member variables.
 
 <div class="highlight">
-<pre><span class="k">interface</span> <span class="n">MyClass</span> <span class="o">:</span> <span class="kt">Object</span>
+<pre><span class="k">interface</span> <span class="n">MyClass</span>
    <span class="k">protected</span>
       <span class="kt">id</span> <span class="n">delegate</span>
    <span class="k">property</span> <span class="k">(</span><span class="k">assign</span><span class="k">)</span>
