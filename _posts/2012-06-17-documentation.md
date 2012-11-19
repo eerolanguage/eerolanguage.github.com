@@ -835,6 +835,26 @@ System header files, regardless of the type of filename string literal used, are
 
 _Motivation_: backward compatibility
 
+<a name="cpppragma"> </a>
+### C++ interoperability *#pragma*
+
+You can directly use C++ APIs and libraries via an Eero-specfic compiler pragma:
+
+<div class="highlight">
+<pre><span class="k">#pragma eero</span> <span class="s">"C++"</span>
+
+<span class="k">#import</span> <span class="s">&lt;vector&gt;</span>
+<span class="p">...</span>
+<span class="kt">std::vector&lt;int&gt;</span> <span class="n">v</span>
+v.push_back(<span class="mi">10</span>)
+v.push_back(<span class="mi">20</span>)
+</pre>
+</div>
+
+Please see the [Eero wiki](https://github.com/eerolanguage/eero/wiki) for more details.
+
+_Motivation_: interoperability
+
 <a name="reserved"> </a>
 Reserved symbols for future features
 ------------------------------------

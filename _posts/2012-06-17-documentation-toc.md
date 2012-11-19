@@ -114,7 +114,10 @@ The *switch* statement
 
 The preprocessor
 ------------------------------------
+
 ### [Direct *#import* of Eero and legacy (Objective-C and C) headers](#importsincludes)
+
+### [C++ interoperability *#pragma*](#cpppragma)
 
 Reserved symbols for future features
 ------------------------------------
