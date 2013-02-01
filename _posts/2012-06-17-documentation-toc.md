@@ -112,6 +112,11 @@ The *switch* statement
 
 ### [Case-value ranges](#caseranges)
 
+Loop enhancements
+-----------------
+
+### [*for-in* loop indexing](#forloopindex)
+
 The preprocessor
 ------------------------------------
 

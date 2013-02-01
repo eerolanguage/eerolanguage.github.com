@@ -811,6 +811,32 @@ These can be freely mixed with single and comma-separated list values within the
 
 _Motivation_: safety, readability
 
+Loop enhancements
+-----------------
+
+<a name="forloopindex"> </a>
+### *for-in* loop indexing
+
+Eero introduces a convenient and compact way to get a loop index in a *for-in* loop. This is similar to Python's *for-in-enumerate* construct. Index counting always starts at zero.
+
+The syntax for the feature is an integral variable declaration or expression preceding the *variable-in-range* component, the two sections separated by a colon:
+
+<div class="highlight">
+<pre><span class="k">for</span> <span class="kt">int</span> index : <span class="kt">id</span> <span class="n">obj</span> <span class="k">in</span> <span class="n">myEnumerableObject</span>
+   Log(<span class="s">'Index: %d'</span>, index) <span class="c1">// index will count from 0 to n loops</span>
+   Log(<span class="s">'Object: %@'</span>, obj)
+
+<span class="kt">int</span> idx 
+<span class="k">for</span> idx : <span class="kt">int</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span> <span class="p">..</span> <span class="mi">10</span>
+   Log(<span class="s">'Index: %d'</span>, idx) <span class="c1">// idx will count from 0 to 9</span>
+</pre>
+</div>
+
+As demonstrated, the integral variable holding the index value can either be a pre-existing variable (defined before and outside of the loop) or declared and valid only within the loop.
+
+This feature is supported for all types of *for-in* loops: fast enumeration objects, NSRanges, and when the C++ interoperability pragma is in effect, C++11 for-range loops.
+
+_Motivation_: [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
 The preprocessor
 ----------------
