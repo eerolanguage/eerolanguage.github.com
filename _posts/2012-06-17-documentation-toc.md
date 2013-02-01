@@ -76,6 +76,8 @@ Classes
 
 ### [Declarations of properties of the same type can be grouped together](#groupproperties)
 
+### [Method *instancetype* parameters] (#instancetypeparams)
+
 Object operators
 ----------------
 

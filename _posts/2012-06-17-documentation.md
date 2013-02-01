@@ -525,6 +525,21 @@ You can use a single property specification with a group of declarations. The de
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="instancetypeparams"> </a>
+### Method *instancetype* parameters
+
+Objective-C supports the use of *instancetype* for method return types, but not method parameters. Eero removes this restriction, supporting *instancetype* parameters as well as return types:
+
+<div class="highlight">
+<pre><span class="k">protocol</span> OrderedCollection &lt;FastEnumeration&gt;
+  at: <span class="kt">UInteger</span> index, <span class="k">return</span> <span class="kt">instancetype</span>
+  put: <span class="kt">instancetype</span> object
+<span class="k">end</span>
+</pre>
+</div>
+
+_Motivation_: safety
+
 Object operators
 ----------------
 
