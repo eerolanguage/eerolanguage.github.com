@@ -1,0 +1,27 @@
+<span class="k">#import</span> <span class="s">&lt;Foundation/Foundation.h&gt;</span>
+
+
+<span class="k">interface</span> FileHelper
+
+  <span class="kt">String</span> name   {<span class="k">readonly</span>}
+  <span class="kt">String</span> format {<span class="k">readonly</span>}
+
+  openFile: <span class="kt">String</span>, [withPermissions: <span class="kt">String</span>], <span class="k">return</span> <span class="kt">FileHandle</span>
+
+<span class="k">end</span>
+
+
+<span class="k">implementation</span> FileHelper
+
+  name,   <span class="k">return</span> <span class="kt">String</span> = <span class="s">'Macintosh'</span>
+  format, <span class="k">return</span> <span class="kt">String</span> = <span class="s">'HFS+'</span>
+
+  openFile: <span class="kt">String</span> path, withPermissions: <span class="kt">String</span> = <span class="s">'readonly'</span>, <span class="k">return</span> <span class="kt">FileHandle</span> = <span class="nb">nil</span>
+
+    <span class="k">if</span> permissions == <span class="s">'readonly'</span> <span class="k">or</span> permissions == <span class="s">'r'</span>
+      <span class="k">return</span> <span class="kt">FileHandle</span>.fileHandleForReadingAtPath: path
+
+    <span class="k">else if</span> permissions == <span class="s">'readwrite'</span> <span class="k">or</span> permissions == <span class="s">'rw'</span>
+      <span class="k">return</span> <span class="kt">FileHandle</span>.fileHandleForUpdatingAtPath: path
+
+<span class="k">end</span>

@@ -1,8 +1,9 @@
 
+<a name="optionalsemicolons"> </a>
+
 General code structure
 ----------------------
 
-<a name="optionalsemicolons"> </a>
 ### Optional semicolons 
 
 Semicolons serve the same general purpose in Eero as they do in C/Objective-C. That is, they terminate and separate statements and declarations. However, with rare exception, they're optional in Eero. As in Python and Ruby, statements generally end with newlines, but the parser will also handle unambiguous statement continuations, such as dangling commas or arithmetic operators, onto subsequent lines. The parser handles other situations as well.
@@ -30,29 +31,34 @@ Eero doesn't require the first level of parentheses around conditional expressio
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
 <a name="nomessagebrackets"> </a>
-### Message passing without square brackets 
+### Message passing using dot notation 
 
-In Eero, you send messages to objects or classes without using square brackets. As a result, you separate parameters using commas. Furthermore, you can group message-passing expressions with parentheses, just as you can any other expressions.
+In Eero, you send messages to objects and classes by placing a dot (period) between the receiver and the selector(s) -- no square brackets are used. For messages with no arguments, this is exactly the same notation used for Objective-C properties, but is also used for non-property methods.
+
+If the selector takes an argument, a colon follows the selector. Multi-part selectors are separated with commas.
+
+The dot operator has the standard C (high) precedence against other operators. 
 
 <div class="highlight">
-<pre><span class="kt">id</span> <span class="n">myarray</span> <span class="o">=</span> <span class="n">NSMutableArray</span> <span class="n">new</span>
-<span class="n">myarray</span> <span class="nl">addObject:</span> <span class="n">myobject</span>
-<span class="n">myarray</span> <span class="nl">replaceObjectAtIndex:</span> <span class="mi">0</span><span class="p">,</span> <span class="nl">withObject:</span> <span class="p">(</span><span class="n">myobject</span> <span class="n">description</span><span class="p">)</span>
+<pre><span class="kt">id</span> <span class="n">myarray</span> <span class="o">=</span> <span class="n">NSMutableArray</span>.<span class="n">new</span>
+<span class="n">myarray</span>.<span class="nl">addObject:</span> <span class="n">myobject</span>
+<span class="n">myarray</span>.<span class="nl">insertObject:</span> myobject<span class="p">,</span> <span class="nl">atIndex:</span> <span class="mi">0</span>
 </pre>
 </div>
 
 _Motivation_: readability
 
+<a name="noatkeywords"> </a>
+
 Keywords
 --------
 
-<a name="noatkeywords"> </a>
 ### Objective-C keywords without '@' 
 
 Eero recognizes Objective-C keywords as regular language keywords. They don't need to be preceded by an '@' character.
 
 <div class="highlight">
-<pre><span class="k">interface</span> MyClass : <span class="kt">NSObject</span>
+<pre><span class="k">interface</span> MyClass : <span class="kt">SomeBaseClass</span>
 <span class="k">end</span></pre>
 </div>
 _Motivation_: readability
@@ -77,18 +83,19 @@ In Eero, _goto_ is still a recognized keyword but its use is forbidden and will 
 
 _Motivation_: safety
 
+<a name="nsprefix"> </a>
+
 Namespaces
 ----------
 
 Neither C nor Objective-C supports namespaces, relying on unique prefixes to prevent symbol collisions. Eero provides a backward-compatible way of obtaining some of the readability benefits of namespaces.
 
-<a name="nsprefix"> </a>
 ### Built-in symbol search on names with the "NS" prefix
 
-When looking to resolve symbol names, the Eero compiler first checks the name as-is, and if not found, tries again with the "NS" prefix. This means you can use the types, functions, non-macro constants, and so on found throughout the Foundation and Cocoa frameworks without "NS". For example, anywhere a class name is used, you can use "String" instead of "NSString".
+When resolving symbol names, the Eero compiler first checks the name as-is, and if not found, tries again with the "NS" prefix. This means you can use the types, functions, non-macro constants, and so on found throughout the Foundation and Cocoa frameworks without "NS". For example, anywhere a class name is used, you can use "String" instead of "NSString".
 
 <div class="highlight">
-<pre><span class="kt">id</span> <span class="n">mystring</span> <span class="o">=</span> <span class="kt">String</span> <span class="nl">stringWithUTF8String:</span> <span class="s">"Hello, World"</span>
+<pre><span class="kt">id</span> <span class="n">mystring</span> <span class="o">=</span> <span class="kt">String</span>.<span class="nl">stringWithUTF8String:</span> <span class="s">"Hello, World"</span>
 </pre>
 </div>
 
@@ -102,22 +109,23 @@ In addition to the built-in "NS" prefix, users can declare their own prefixes to
 <div class="highlight">
 <pre><span class="k">using</span> <span class="k">prefix</span> <span class="n">AB</span>
 <span class="p">...</span>
-<span class="kt">id</span> <span class="n">theAddressBook</span> <span class="o">=</span> <span class="n">AddressBook</span> <span class="n">sharedAddressBook</span> 
+<span class="kt">id</span> <span class="n">theAddressBook</span> <span class="o">=</span> <span class="n">AddressBook</span>.<span class="n">sharedAddressBook</span> 
 </pre>
 </div>
 
 _Motivation_: readability
 
+<a name="objectsarepointers"> </a>
+
 Variables and literals
 ----------------------
 
-<a name="objectsarepointers"> </a>
 ### Object declarations are assumed to be pointers
 
 Since Objective-C objects are always references (pointers to objects), it is never valid to define object variables as anything but pointers. Instead of issuing an error, Eero implicitly treats all declarations of a class type as a pointer to that type. This means that no associated asterisk is needed.
 
 <div class="highlight">
-<pre><span class="kt">NSString</span> <span class="n">mystring</span> <span class="o">=</span> <span class="n">myobject</span> <span class="n">description</span>
+<pre><span class="kt">NSString</span> <span class="n">mystring</span> <span class="o">=</span> <span class="n">myobject</span>.<span class="n">description</span>
 </pre>
 </div>
 
@@ -152,7 +160,7 @@ _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_you
 <a name="noshadowing"> </a>
 ### No variable shadowing
 
-Partly due to the type inference feature, and partly as a general code safety and readability improvement, the compiler does not permit variable shadowing. Attempting to re-declare a variable of the same name in an inner scope will result in a compilation error.
+Eero does not permit variable shadowing. Attempting to re-declare a variable of the same name in an inner scope will result in a compilation error.
 
 <div class="highlight">
 <pre><span class="n">counter</span> <span class="o">:=</span> <span class="mi">0</span>
@@ -209,8 +217,8 @@ _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_you
 If used with a *nil* or *Nil*, inferred variable types are of type *id* or *Class*, respectively:
 
 <div class="highlight">
-<pre><span class="n">myobject</span> <span class="o">:=</span> <span class="nb">nil</span>  <span class="c1">// is of type id</span>
-<span class="n">myclass</span> <span class="o">:=</span> <span class="nb">Nil</span>   <span class="c1">// is of type Class</span>
+<pre><span class="n">myobject</span> <span class="o">:=</span> <span class="nb">nil</span>  <span class="c1">// variable is of type 'id'</span>
+<span class="n">myclass</span> <span class="o">:=</span> <span class="nb">Nil</span>   <span class="c1">// variable is of type 'Class'</span>
 </pre>
 </div>
 
@@ -222,14 +230,14 @@ _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_you
 While you can still use the *selector* compiler directive, Eero recognizes selector literals enclosed in vertical bars:
 
 <div class="highlight">
-<pre><span class="n">myobject</span> <span class="nl">performSelector:</span> <span class="s">|</span><span class="s">applicationReady:</span><span class="s">|</span><span class="p">,</span> <span class="nl">withObject:</span> <span class="nb">nil</span><span class="p">,</span> <span class="nl">afterDelay:</span> <span class="mi">0</span>
+<pre><span class="n">myobject</span>.<span class="nl">performSelector:</span> <span class="s">|</span><span class="s">applicationReady:</span><span class="s">|</span><span class="p">,</span> <span class="nl">withObject:</span> <span class="nb">nil</span><span class="p">,</span> <span class="nl">afterDelay:</span> <span class="mi">0</span>
 </pre>
 </div>
 
 Enclose protocol literals in angle brackets:
 
 <div class="highlight">
-<pre><span class="k">if</span> <span class="n">myobject</span> <span class="nl">conformsToProtocol:</span> <span class="s">&lt;</span><span class="s">Coding</span><span class="s">&gt;</span>
+<pre><span class="k">if</span> <span class="n">myobject</span>.<span class="nl">conformsToProtocol:</span> <span class="s">&lt;</span><span class="s">Coding</span><span class="s">&gt;</span>
    <span class="p">...</span>
 </pre>
 </div>
@@ -305,10 +313,11 @@ Implicit conversion from an *enum* value to an integer type is still allowed, ho
 </pre>
 </div>
 
+<a name="defaultsuperclass"> </a>
+
 Classes
 -------
 
-<a name="defaultsuperclass"> </a>
 ### Default superclass is NSObject
 
 When you declare a class but don't specify a superclass, NSObject is assumed.
@@ -424,9 +433,9 @@ For the implementation, the default values of the optional parameters are assign
    <span class="n">openFile</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withPermissions</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">'r'</span><span class="p">,</span> <span class="k">return</span> <span class="kt">FileHandle</span>
       <span class="n">handle</span> <span class="p">:</span><span class="o">=</span> <span class="nb">nil</span>
       <span class="k">if</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s">'r'</span>
-         <span class="n">handle</span> <span class="o">=</span> <span class="n">FileHandle</span> <span class="n">fileHandleForReadingAtPath</span><span class="p">:</span> <span class="n">file</span>
+         <span class="n">handle</span> <span class="o">=</span> <span class="n">FileHandle</span>.<span class="n">fileHandleForReadingAtPath</span><span class="p">:</span> <span class="n">file</span>
       <span class="k">else</span> <span class="k">if</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s">'w'</span> <span class="k">or</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s">'rw'</span>
-         <span class="n">handle</span> <span class="o">=</span> <span class="n">FileHandle</span> <span class="n">fileHandleForUpdatingAtPath</span><span class="p">:</span> <span class="n">file</span>
+         <span class="n">handle</span> <span class="o">=</span> <span class="n">FileHandle</span>.<span class="n">fileHandleForUpdatingAtPath</span><span class="p">:</span> <span class="n">file</span>
       <span class="k">return</span> <span class="n">handle</span>
 <span class="k">end</span>
 </pre>
@@ -452,7 +461,10 @@ Optional parameters are restricted to the second and subsequent items. However, 
 
 <div class="highlight">
 <pre><span class="k">interface</span> <span class="n">MyClass</span>
-   <span class="nl">openFile:</span> <span class="kt">String</span><span class="p">,</span> <span class="p">[</span><span class="nl">withPermissions:</span> <span class="kt">String</span><span class="p">],</span> <span class="nl">seekToEnd:</span> <span class="kt">BOOL</span><span class="p">,</span> <span class="p">[</span><span class="nl">closeAfterReading:</span> <span class="kt">BOOL</span><span class="p">],</span> <span class="k">return</span> <span class="kt">FileHandle</span>
+   <span class="nl">openFile:</span> <span class="kt">String</span><span class="p">,</span> <span class="p">[</span><span class="nl">withPermissions:</span> <span class="kt">String</span><span class="p">],</span>
+                            <span class="nl">seekToEnd:</span> <span class="kt">BOOL</span><span class="p">,</span> <span class="p">
+                   [</span><span class="nl">closeAfterReading:</span> <span class="kt">BOOL</span><span class="p">],</span> 
+                                <span class="k">return</span> <span class="kt">FileHandle</span>
 <span class="k">end</span>
 </pre>
 </div>
@@ -469,9 +481,9 @@ You can specify a default return expression for a method definition by providing
 <div class="highlight">
 <pre><span class="n">openFile</span><span class="o">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">withPermissions</span><span class="o">:</span> <span class="kt">String</span><span class="o">,</span> <span class="k">return</span> <span class="kt">FileHandle</span> <span class="o">=</span> <span class="n">nil</span>
    <span class="k">if</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s1">'r'</span>
-      <span class="k">return</span> <span class="n">FileHandle</span> <span class="n">fileHandleForReadingAtPath</span><span class="o">:</span> <span class="n">file</span>
+      <span class="k">return</span> <span class="n">FileHandle</span>.<span class="n">fileHandleForReadingAtPath</span><span class="o">:</span> <span class="n">file</span>
    <span class="k">else</span> <span class="k">if</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s1">'w'</span> <span class="k">or</span> <span class="n">permissions</span> <span class="o">==</span> <span class="s1">'rw'</span>
-      <span class="k">return</span> <span class="o">=</span> <span class="n">FileHandle</span> <span class="n">fileHandleForUpdatingAtPath</span><span class="o">:</span> <span class="n">file</span>
+      <span class="k">return</span> <span class="o">=</span> <span class="n">FileHandle</span>.<span class="n">fileHandleForUpdatingAtPath</span><span class="o">:</span> <span class="n">file</span>
 </pre>
 </div>
 
@@ -488,42 +500,39 @@ If no *return* statement is encountered in the method body, the method will retu
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
 <a name="nocurlyvars"> </a>
-### No curly braces needed around member-variable declarations
+### No curly braces needed around member-variable declarations,  only allowed in implementations
 
-Member variables, while still requiring placement at the beginning of an interface or implementation, don't need to be surrounded by curly braces:
+Member variables, while still requiring placement at the beginning of an implementation, don't need to be surrounded by curly braces:
 
 <div class="highlight">
-<pre><span class="k">interface</span> <span class="n">MyClass</span>
-   <span class="k">protected</span>
-      <span class="kt">int</span> <span class="n">counter</span>
-      <span class="kt">id</span> <span class="n">delegate</span>
-   <span class="n">model</span><span class="p">,</span> <span class="k">return</span> <span class="kt">String</span>
-   <span class="n">serialNumber</span><span class="p">,</span> <span class="k">return</span> <span class="kt">String</span>
+<pre><span class="k">implementation</span> <span class="n">MyClass</span>
+   <span class="kt">int</span> <span class="n">counter</span>
+   <span class="kt">id</span> <span class="n">delegate</span>
 <span class="k">end</span>
 </pre>
 </div>
 
-_Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+Furthermore, member variables can only be declared in implementations. This restriction 
+removes the [fragile base class problem](http://en.wikipedia.org/wiki/Fragile_base_class), and obviates the need for <em>private</em>, <em>protected</em>, and <em>public</em> access 
+specifiers (they are now, in effect, always <em>private</em>). This restriction does not apply to legacy headers and frameworks.
+
+
+_Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself), safety
 
 <a name="groupproperties"> </a>
-### Declarations of properties of the same type can be grouped together
+### Simpler property declarations
 
-You can use a single property specification with a group of declarations. The declarations must follow any member variables.
+Property declarations now look very similar to variable declarations. Attributes, if specified, follow the declaration and are enclosed in curly braces.
 
 <div class="highlight">
 <pre><span class="k">interface</span> <span class="n">MyClass</span>
-   <span class="k">protected</span>
-      <span class="kt">id</span> <span class="n">delegate</span>
-   <span class="k">property</span> <span class="k">(</span><span class="k">assign</span><span class="k">)</span>
-      <span class="kt">String</span> <span class="n">name</span>
-      <span class="kt">String</span> <span class="n">desc</span>
-   <span class="n">model</span><span class="p">,</span> <span class="k">return</span> <span class="kt">String</span>
-   <span class="n">serialNumber</span><span class="p">,</span> <span class="k">return</span> <span class="kt">String</span>
+   <span class="kt">String</span> <span class="n">name {<span class="k">assign</span>}</span>
+   <span class="kt">String</span> <span class="n">desc {<span class="k">assign</span>}</span>
 <span class="k">end</span>
 </pre>
 </div>
 
-_Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+_Motivation_: readability
 
 <a name="instancetypeparams"> </a>
 ### Method *instancetype* parameters
@@ -532,27 +541,28 @@ Objective-C supports the use of *instancetype* for method return types, but not 
 
 <div class="highlight">
 <pre><span class="k">protocol</span> OrderedCollection &lt;FastEnumeration&gt;
-  at: <span class="kt">UInteger</span> index, <span class="k">return</span> <span class="kt">instancetype</span>
-  put: <span class="kt">instancetype</span> object
+   at: <span class="kt">UInteger</span> index, <span class="k">return</span> <span class="kt">instancetype</span>
+   put: <span class="kt">instancetype</span> object
 <span class="k">end</span>
 </pre>
 </div>
 
 _Motivation_: safety
 
+<a name="equalityoperators"> </a>
+
 Object operators
 ----------------
 
 Eero supports a limited set of common operators for Objective-C objects. All operands involved must be objects. The operators are, in fact, aliases for certain methods. However, the operators follow the same precedence rules as their primitive-data-type counterparts.
 
-<a name="equalityoperators"> </a>
 ### Built-in equality and inequality comparison operators
 
 For all objects, the comparison operators '==' (equals) and '!=' (not equal) map to the *isEqual* method. The result is negated for '!='. This replaces the low-level address comparison used in standard Objective-C for two objects. This allows valid comparisons of the form:
 
 <div class="highlight">
 <pre><span class="n">mystring</span> <span class="p">:</span><span class="o">=</span> <span class="n">MutableString</span> <span class="n">new</span>
-<span class="n">mystring</span> <span class="n">appendString</span><span class="p">:</span> <span class="s">'Hello, World'</span>
+<span class="n">mystring</span>.<span class="n">appendString</span><span class="p">:</span> <span class="s">'Hello, World'</span>
 
 <span class="k">if</span> <span class="n">mystring</span> <span class="o">==</span> <span class="s">'Hello, World'</span>
    <span class="c1">// gets here, since above condition is true</span>
@@ -576,7 +586,7 @@ When the '+' binary operator is used, *stringByAppendingString* will be sent to 
 </pre>
 </div>
 
-When the '<<' binary operator is used, *appendString* will be sent to instances of classes or protocols that respond to it (mainly NSMutableString):
+When the '<<' binary operator is used, *appendString* will be sent to instances of classes or protocols that respond to it (mainly MutableString):
 
 <div class="highlight">
 <pre><span class="n">mystring</span> <span class="p">:</span><span class="o">=</span> <span class="s">''</span>
@@ -589,21 +599,21 @@ _Motivation_: readability
 <a name="binaryoperators"> </a>
 ### Binary operators (effectively, operator overloading)
 
-The following chart shows the supported object binary operators and resulting methods. In the cases of '+' and '<<', defining these methods for a particular class overrides the built-in versions.
+The following chart shows the supported object binary operators and resulting methods. In the cases of '+' and '&lt;&lt;', defining these methods for a particular class overrides the built-in versions.
 
 <table>
 <tr><td><strong>Operator</strong></td><td><strong>Method name</strong></td><td><strong>Notes</strong></td></tr>
-<tr><td class="centered-cell">+</td><td>plus</td><td>includes support for +=</td></tr>
-<tr><td class="centered-cell">-</td><td>minus</td><td>includes support for -=</td></tr>	
-<tr><td class="centered-cell">*</td><td>multipliedBy</td><td>includes support for *=</td></tr>	
-<tr><td class="centered-cell">/</td><td>dividedBy</td><td>includes support for /=</td></tr>	
-<tr><td class="centered-cell">%</td><td>modulo</td><td>includes support for %=</td></tr>	
-<tr><td class="centered-cell">&lt;</td><td>isLess</td><td></td></tr>
-<tr><td class="centered-cell">&gt;</td><td>isGreater</td><td></td></tr>	
-<tr><td class="centered-cell">&lt;=</td><td>isGreater</td><td>result is !(left isGreater: right)</td></tr>	
-<tr><td class="centered-cell">&gt;=</td><td>isLess</td><td>result is !(left isLess: right)</td></tr>	
-<tr><td class="centered-cell">&lt;&lt;</td><td>shiftLeft</td><td></td></tr>	
-<tr><td class="centered-cell">&gt;&gt;</td><td>shiftRight</td><td></td></tr>
+<tr><td class="centered-cell"><code>+</code></td><td>plus</td><td>includes implicit support for <code>+=</code></td></tr>
+<tr><td class="centered-cell"><code>-</code></td><td>minus</td><td>includes implicit support for <code>-=</code></td></tr>	
+<tr><td class="centered-cell"><code>*</code></td><td>multipliedBy</td><td>includes implicit support for <code>*=</code></td></tr>	
+<tr><td class="centered-cell"><code>/</code></td><td>dividedBy</td><td>includes implicit support for <code>/=</code></td></tr>	
+<tr><td class="centered-cell"><code>%</code></td><td>modulo</td><td>includes implicit support for <code>%=</code></td></tr>	
+<tr><td class="centered-cell"><code>&lt;</code></td><td>isLess</td><td></td></tr>
+<tr><td class="centered-cell"><code>&gt;</code></td><td>isGreater</td><td></td></tr>	
+<tr><td class="centered-cell"><code>&lt;=</code></td><td>isGreater</td><td>result is <code>!(left.isGreater:right)</code></td></tr>	
+<tr><td class="centered-cell"><code>&gt;=</code></td><td>isLess</td><td>result is <code>!(left.isLess:right)</code></td></tr>	
+<tr><td class="centered-cell"><code>&lt;&lt;</code></td><td>shiftLeft</td><td></td></tr>	
+<tr><td class="centered-cell"><code>&gt;&gt;</code></td><td>shiftRight</td><td></td></tr>
 </table>
 
 _Motivation_: readability
@@ -638,6 +648,8 @@ All other object types indexed using '\[NSRange\]' will be sent *subarrayWithRan
 
 _Motivation_: readability
 
+<a name="boxing"> </a>
+
 Special object casts (boxing and unboxing)
 ------------------------------------------
 
@@ -648,7 +660,6 @@ Special object casts (boxing and unboxing)
 </pre>
 </div>
 
-<a name="boxing"> </a>
 ### Converting primitive data types to objects (boxing)
 
 "Casting" a primitive data type to an Objective-C class results in the creation of an object of that type (boxing), implicitly using the appropriate method to do so. For example:
@@ -660,7 +671,9 @@ Special object casts (boxing and unboxing)
 </pre>
 </div>
 
-This works with any class that implements the appropriate *numberWith&lt;Type&gt;* class methods. 
+This works with any class that implements the appropriate *numberWith&lt;Type&gt;* class methods, not just *NSNumber*. Note 
+that Objective-C's '@' boxing operator is still supported and unchanged.
+
 
 C-style character strings are also supported, implicitly using class method *stringWithUTF8String*:
 
@@ -670,7 +683,6 @@ C-style character strings are also supported, implicitly using class method *str
 <span class="n">mutableStringObject</span> <span class="o">:=</span> <span class="p">(</span><span class="kt">MutableString</span><span class="p">)</span> <span class="n">helloworld</span>
 </pre>
 </div>
-There are no implicit conversions from primitive to object.
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
@@ -703,37 +715,34 @@ Conversion of *NSString* objects to C strings (technically, UTF8 strings) is als
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="compactblocks"> </a>
+
 Blocks enhancements
 -------------------
 
-Blocks are generally unchanged from Apple's C/Objective-C implementation. The primary difference in Eero is the use of indentation instead of braces to enclose them. A newline must immediately follow the parameter declaration list:
+Blocks are based on Apple's C/Objective-C implementation. The primary differences in Eero are the use of indentation instead of braces, and the fact 
+that no caret is used to precede a block literal (the caret is still used in block type declarations). You can think of a block as an anonymous function, where the
+function name is simply omitted.
 
-<div class="highlight">
-<pre><span class="n">myblock</span> <span class="o">:=</span> <span class="o">^</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
-   <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span>
-      <span class="n">printf</span><span class="p">(</span> <span class="s">"value was negative! (%d)</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x</span> <span class="p">)</span>
-      <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-   <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<div class="highlight"><pre>
+myblock := (<span class="kt">int</span> x, <span class="kt">int</span> y)
+   <span class="k">if</span> x &lt; <span class="mi">0</span>
+      printf( <span class="s">"value was negative! (%d)\n"</span>, x )
+      x = <span class="mi">0</span>
+   <span class="k">return</span> x + y
 </pre>
 </div>
 
-<a name="compactblocks"> </a>
 ### Compact blocks
 
-Eero supports a compact form for blocks that only requires a single expression or *return* statement. Within the parentheses following the '^' (caret), a vertical bar separates the parameters from the expression or *return* statement. Aside from a *return*, no statements are allowed, so condition statements and loops cannot be present.
+Eero supports a compact form for blocks that uses a single expression or *return* statement. Within the parentheses following
+the parameter declaration list, a vertical bar separates the parameters from the expression or *return* statement. Aside from a *return*, 
+no statements are allowed, so condition statements and loops cannot be present.
 
-<div class="highlight">
-<pre><span class="n">xyblock</span> <span class="o">:=</span> <span class="o">^</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">|</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
-</pre>
-</div>
+<div class="highlight"><pre>
+<span class="n">xyblock</span> := (<span class="kt">int</span> x, <span class="kt">int</span> y | <span class="k">return</span> x + y)
 
-<div class="highlight">
-<pre><span class="n">vblock</span> <span class="o">:=</span> <span class="o">^</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">value</span> <span class="o">|</span> <span class="o">*</span><span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-</pre>
-</div>
-
-<div class="highlight">
-<pre><span class="n">descriptions</span> <span class="o">:=</span> <span class="n">mylist</span> <span class="nl">mapWith:</span> <span class="o">^</span><span class="p">(</span><span class="kt">id</span> <span class="n">element</span> <span class="o">|</span> <span class="k">return</span> <span class="n">element</span> <span class="n">description</span><span class="p">)</span>
+descriptions := mylist.mapWith: (<span class="kt">id</span> element | <span class="k">return</span> element.description)
 </pre>
 </div>
 
@@ -751,20 +760,21 @@ Eero supports constructions that look and act like nested functions but are sema
          <span class="k">if</span> obj == <span class="s">''</span>
             *stop = <span class="nb">YES</span>
          <span class="k">else</span>
-            obj appendFormat <span class="s">'%u'</span>, idx
-      strings enumerateObjectsUsingBlock: addPositionSuffix
+            obj.appendFormat: <span class="s">'%u'</span>, idx
+      strings.enumerateObjectsUsingBlock: addPositionSuffix
       addPositionSuffix = <span class="nb">nil</span>  <span class="c1">// generates a compiler error: addPositionSuffix is a const</span>
 <span class="k">end</span></pre>
 </div>
 
 _Motivation_: readability
 
+<a name="nofallthrough"> </a>
+
 The *switch* statement
 ----------------------
 
 While being very similar in structure (and the same in performance) to the *switch* statement in the C language family, Eero makes various changes to the construct.
 
-<a name="nofallthrough"> </a>
 ### No fall-through 
 
 Eero *case* statements do **not** fall through, and thus do not require break statements. The ':' (colon) following the *case* value is optional, but the newline and indented code block is not. (The usual off-side rules apply.) Furthermore, these blocks automatically form declaration scopes, allowing declarations and definitions local to these scopes.
@@ -826,10 +836,11 @@ These can be freely mixed with single and comma-separated list values within the
 
 _Motivation_: safety, readability
 
+<a name="forloopindex"> </a>
+
 Loop enhancements
 -----------------
 
-<a name="forloopindex"> </a>
 ### *for-in* loop indexing
 
 Eero introduces a convenient and compact way to get a loop index in a *for-in* loop. This is similar to Python's *for-in-enumerate* construct. Index counting always starts at zero.
@@ -853,10 +864,11 @@ This feature is supported for all types of *for-in* loops: fast enumeration obje
 
 _Motivation_: [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
+<a name="importsincludes"> </a>
+
 The preprocessor
 ----------------
 
-<a name="importsincludes"> </a>
 ### Direct *#import* of Eero and legacy (Objective-C and C) headers
 
 Eero code can directly import and use Eero and standard Objective-C and C header files. This is done through the Objective-C *#import* and *#include* preprocessor directives. 
@@ -897,6 +909,7 @@ Please see the [Eero wiki](https://github.com/eerolanguage/eero/wiki) for more d
 _Motivation_: interoperability
 
 <a name="reserved"> </a>
+
 Reserved symbols for future features
 ------------------------------------
 

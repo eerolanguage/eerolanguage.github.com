@@ -1,16 +1,16 @@
-**Table of contents**
+# Table of contents
 ---------------------
 
 General code structure
 ----------------------
 
-#### [Optional semicolons](#optionalsemicolons)
+### [Optional semicolons](#optionalsemicolons)
 
 ### [Off-side rule (indentation indicates block scope)](#offsiderule)
 
 ### [Optional parentheses around conditions](#optionalparens)
 
-### [Message passing without square brackets](#nomessagebrackets)
+### [Message passing using dot notation](#nomessagebrackets)
 
 Keywords
 --------
@@ -131,3 +131,5 @@ Reserved symbols for future features
 ### [import](#reserved)
 ### [=>](#reserved)
 
+
+--------------------------------------

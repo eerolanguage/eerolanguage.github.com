@@ -1,20 +1,61 @@
 ---
-layout: home
+layout: default
 title: the eero programming language
 short-title: home
 position: 1
 ---
 
-<div class="content">
-  <h2>what is eero?</h2>
-  Eero is a fully binary- and header-compatible dialect of Objective-C, implemented with a 
-  modified version of the Apple-sponsored LLVM/clang open-source compiler. It features a streamlined syntax, 
-  Python-like indentation, and other features that improve readability and code safety. It is inspired by 
-  languages such as Smalltalk, Python, and Ruby. 
+<div class="featured featuredbackgroundcolor">
 
-  <p>"Eero" is pronounced [ˈe-rō]‚ and is similar to the English word "aero".</p>
+  <div id="banner">
+    <div class="largecopy bannerbackgroundcolor">
+      <a href="eerolanguage.org" class="bannerforegroundcolor">New in Version 2: Global dot notation, simpler blocks, simpler properties</a>
+    </div>
+  </div>  
 
-  <h2>code sample</h2>(A compilable version with instructions can be found <a href="samples/files.eero">here</a>.)
-  {% include code-sample.html %}
+  {% include helloworld.html %}
+  
+  <div class="logo logocolor">eero</div>
+  
+  <div class="tagline logocolor">objective-c, evolved</div>
+
+  <div id="intro">
+    <div class="largecopy copycolor">
+      Eero is a dialect of Objective-C designed to make developers more productive through improved code readability, maintainability, and safety.
+    </div>
+  </div>
+
+  <div id="facts" class="accentbackgoundcolor">
+    <div class="largecopy copycolor">
+      <span>The myth?</span> "It's just syntax." <span>The fact:</span>  Readability matters. Code is read many more times than it’s written—and after a few months, even your own code can start to look like someone else’s. Eero’s streamlined syntax and Python-like indentation make code easier to read, understand, and maintain.
+    </div>
+  </div>
+
+</div>
+
+<div id="benefits" class="softbackgroundcolor">
+    <div id="save_time">
+      <span class="largecopy copycolor">time-saving</span>
+      <div class="copy">
+        Poor code readability costs you development time. Syntactic "noise," redundant notation, and boilerplate all 
+        distract and provide opportunities for "dumb" and sometimes subtle errors. No language can guarantee clean code, 
+        but Eero helps you do a better job.
+      </div>
+    </div>
+    <div id="interoperable">
+      <span class="largecopy copycolor">highly interoperable</span></h2>
+      <div class="copy copycolor">
+        Excellent, nearly seamless, interoperability with Objective-C, C, and C++. Just import and use SDK, third-party, 
+        and personal frameworks and libraries. And all LLVM memory management choices are available, 
+        including manual reference counting and ARC.
+      </div>
+    </div>    
+    <div id="performance">
+      <span class="largecopy copycolor">high-performance</span></h2>
+      <div class="copy copycolor">
+        Compiles down to the same binary code as Objective-C, so you'll enjoy the same performance as standard LLVM-generated Objective-C code. 
+        This includes any high-performance C functions or C++ objects you use!
+      </div>
+    </div>    
 </div>
 

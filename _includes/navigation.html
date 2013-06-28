@@ -5,15 +5,10 @@
       {% assign isLast = forloop.last %}
       {% for jPage in site.pages %}
         {% if jPage.position == index %}
-          {% if isLast %}
-            {% assign class = "navrounded" %}
-          {% else %}
-            {% assign class = "navsquare" %}
-          {% endif %}
           {% if jPage.url == page.url %}
-            <li><a href="{{jPage.url}}" id="current" class="{{class}}">{{jPage.short-title}}</a></li>
+            <li><a href="{{jPage.url}}" id="current" class="{{class}} menucolors">{{jPage.short-title}}</a></li>
           {% else %}
-            <li><a href="{{jPage.url}}" class="{{class}}">{{jPage.short-title}}</a></li>
+            <li><a href="{{jPage.url}}" class="{{class}} copycolor">{{jPage.short-title}}</a></li>
           {% endif %}
         {% endif %}
       {% endfor %}  

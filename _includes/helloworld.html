@@ -1,0 +1,15 @@
+<div id="helloworld" class="softbackgroundcolor">
+<pre>
+#import &lt;Foundation/Foundation.h&gt;
+
+<span class="kt">int</span> main() 
+   words := [<span class="s">'Hello,'</span>, <span class="s">'world!'</span>]
+   sentence := <span class="kt">MutableString</span>.new
+
+   <span class="k">for</span> <span class="kt">String</span> word <span class="k">in</span> words
+      sentence << word + <span class="s">' '</span>
+
+   Log(<span class="s">'%@'</span>, sentence)
+   <span class="k">return</span> <span class="mi">0</span>
+</pre>
+</div>
