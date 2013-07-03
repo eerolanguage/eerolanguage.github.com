@@ -33,9 +33,9 @@ _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_you
 <a name="nomessagebrackets"> </a>
 ### Message passing using dot notation 
 
-In Eero, you send messages to objects and classes by placing a dot (period) between the receiver and the selector(s) -- no square brackets are used. For messages with no arguments, this is exactly the same notation used for Objective-C properties, but is also used for non-property methods.
+In Eero, you send messages to objects and classes by placing a dot (period) between the receiver and the selector(s) -- no square brackets are used. For messages with no arguments, this is exactly the same notation used for Objective-C properties.
 
-If the selector takes an argument, a colon follows the selector. Multi-part selectors are separated with commas.
+If the selector takes an argument, a colon follows the selector. Multi-part selectors are separated by commas.
 
 The dot operator has the standard C (high) precedence against other operators. 
 
@@ -721,7 +721,7 @@ Blocks enhancements
 -------------------
 
 Blocks are based on Apple's C/Objective-C implementation. The primary differences in Eero are the use of indentation instead of braces, and the fact 
-that no caret is used to precede a block literal (the caret is still used in block type declarations). You can think of a block as an anonymous function, where the
+that no caret (‘^’) is used to precede a block literal (the caret is still used in block type declarations). You can think of a block as an anonymous function, where the
 function name is simply omitted.
 
 <div class="highlight"><pre>
