@@ -519,7 +519,7 @@ specifiers (they are now, in effect, always <em>private</em>). This restriction 
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself), safety
 
-<a name="groupproperties"> </a>
+<a name="simplerproperties"> </a>
 ### Simpler property declarations
 
 Property declarations now look very similar to variable declarations. Attributes, if specified, follow the declaration and are enclosed in curly braces.

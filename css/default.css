@@ -52,7 +52,7 @@ table {
 /*------------- Defaults -----------------*/
 
 html, body {
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 /*------------ Navigation menu ------------*/
@@ -90,6 +90,19 @@ nav li a {
 
 /*------------ General content ------------*/
 
+.contentmargins {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.floating {
+  float: left;
+}
+
 .logo {
   font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
   font-weight: normal;
@@ -113,7 +126,7 @@ nav li a {
   font-family: Arial;
   font-weight: normal;
   font-size: 1em;
-  line-height: 1.2em;
+  line-height: 1.4em;
 }
 
 .copycolor {
@@ -142,6 +155,12 @@ nav li a {
 
 .bannerbackgroundcolor {
   background-color:#0091CE;
+}
+
+.bannertext {
+  line-height: 1.5em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
 }
 
 .clearbackgroundcolor {
@@ -182,7 +201,6 @@ pre {
 
 .featured {
   float: left;
-  width: 100%;
 }
 
 .featured .logo {
@@ -199,14 +217,10 @@ pre {
 
 .featured .largecopy {
   position: relative;
-  padding-left: 80px; /* Adjust for kerning to align flush left */
-  padding-right: 80px;
 }
 
 .featured .copy {
   position: relative;
-  padding-left: 80px; /* Adjust for kerning to align flush left */
-  padding-right: 80px;
 }
 
 .featured pre {
@@ -218,8 +232,17 @@ pre {
 
 /*-------------- Home --------------*/
 
+#banner {
+  position: relative;
+  margin-top: 1.5em;
+}
+
+#banner a {
+  text-decoration: none;
+}
+
 #intro {
-  float: left;
+  float: inherit;
   width: 15%;
   margin-bottom: 1.5em;
 }
@@ -229,19 +252,10 @@ pre {
   width: 17em;
 }
 
-#banner {
-  position: relative;
-  margin-top: 1.5em;
-}
-
-#banner a {
-  line-height: 1.5em;
-  text-decoration: none;
-}
-
 #banner div:hover {
   text-decoration: none;
-  background-color:#4444FF;
+  background-color: #0071AE;
+//  00 91 CE
 }
 
 #facts {
@@ -254,55 +268,34 @@ pre {
   font-weight: bold;
 }
 
-#benefits {
+.benefits {
   position: relative;
-  float: left;
-  padding-top: 2em;
+  float: inherit;
   padding-bottom: 2em;
 }
 
-#benefits .copy {
+.benefit {
+  float: inherit;
+  margin-top: 1.5em;
+  margin-right: 1.5em;
+  width: 30%;
+  min-width: 15em;
+  min-height: 9em;
+}
+
+.benefit .copy {
   margin-top: 0.8em;
-  line-height: 1.4em;
 }
 
-#benefits span {
+.benefit span {
   font-weight: bold;
-}
-
-#save_time {
-  float: inherit;
-  margin-left: 80px;
-  width: 25%;
-}
-
-/* 
-#reduce_errors {
-  float: inherit;
-  margin-left: 2em;
-  width: 25%;
-}
- */
-
-#interoperable {
-  float: inherit;
-  margin-left: 2em;
-  width: 25%;
-}
-
-#performance {
-  float: inherit;
-  margin-left: 2em;
-  margin-right: 80px;
-  width: 25%;
 }
 
 #helloworld {
   float: right;
-  margin-top: 2em;
-  margin-right: 80px;
+  margin-top: 2.5em;
   padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.3em;
   padding-left: 1em;
   padding-right: 2em;
   width: auto;
@@ -313,6 +306,10 @@ pre {
   border-color: #D6D6D6;
 
   box-shadow: 10px 10px 5px #888;
+}
+
+#helloworld pre {
+  line-height: 1.5;
 }
 
 
@@ -360,18 +357,11 @@ em {
   font-style: italic;
 }
 
-#docbackground {
-  float: left;
-  width: 100%;
-}
-
 #documentation {
-  margin-top: 3em;
-  margin-left: 80px;
-  margin-right: 80px;  
+  position: relative;
+  margin-top: 2em;
   padding-bottom: 2em;
 }
-
 
 #documentation h2 {
   margin-top: 2em;
@@ -454,7 +444,6 @@ em {
 }
 
 #github_links {
-  width: 100%;
   padding-top: 2em;
   padding-bottom: 2em;
 }
@@ -467,45 +456,36 @@ em {
 
 /*-------------- Contact --------------*/
 
-#andy_banner {
-  position: relative;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
-}
-
-#andy_links {
-  padding-top: 1em;
-  padding-bottom: 2em;
-}
-
-#andy_links div {
-  float: left;
-  padding-right: 5em;
+.contact_link {
+  float: inherit;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 10em;
 }
 
 #about {
-  position: relative;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
-}
-
-#saarinen {
-  width: 20em;
-  padding-top: 2em;
+  position: inherit;
+  float: inherit;
   padding-bottom: 2em;
 }
 
+#saarinen {
+  float: inherit;
+  margin-top: 1.5em;
+  padding-right: 3em;
+  width: 40%;
+  min-width: 24em;
+}
+
 #furniture {
-  float: right;
-  width: 25em;
-  margin-left: 2em;
-  margin-right: 80px;
-  padding-top: 2em;
+  float: inherit;
+  margin-top: 1.5em;
+  width: 24em;
 }
 
 #furniture img {
-  width: 100%;
   display: block;
+  width: 100%;
 }
 
 #furniture figcaption {
@@ -515,17 +495,30 @@ em {
 }
 
 #about_me {
-  position: relative;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
+  float: inherit;
+  width: 24em;
+  min-width: 24em;
+  width: 40%;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
-#arvanitis {
-  width: 30em;
-  padding-top: 2em;
-  padding-bottom: 2em;
+#my_pic {
+  float: inherit;
+  margin-top: 1.5em;
+  width: 24em;
+  margin-bottom: 2em;
+  padding-right: 3em;
 }
 
+#my_pic img {
+  display: block;
+  width: 100%;
+}
+
+#we_live {
+  padding-top: 1em;
+}
 
 /*-------------- Code sample --------------*/
 
@@ -546,15 +539,11 @@ em {
 
 #eero_sample {
   margin-top: 2em;
-  margin-bottom: 1em;
+  margin-bottom: 3em;
 }
-
 
 .code_sample {
-  margin-left: 80px;
-  margin-right: 80px;
 }
-
  
 pre.code_sample {
   border: 1px;
@@ -565,5 +554,53 @@ pre.code_sample {
   padding-bottom: 1em;
   box-shadow: 10px 10px 5px #888;
 }
+
+/*-------------- Features --------------*/
+
+.features {
+  position: inherit;
+  float: left;
+  padding-bottom: 2em;
+}
+
+.feature {
+  float: inherit;
+  margin-top: 1.5em;
+  margin-right: 1.5em;
+  width: 24em;
+//  min-width: 45%;
+  min-height: 10em;
+}
+
+.feature .copy {
+  margin-top: 0.8em;
+  line-height: 1.4em;
+}
+
+.feature span {
+  font-weight: bold;
+}
+
+.feature ul {
+  list-style-type: disc;
+  margin-left: 0.9em;
+}
+
+.feature pre {
+  display: inline;
+}
+
+#features_banner {
+  position: relative;
+  margin-top: 1.5em;
+}
+
+#whatiseero {
+  padding-top: 1em;
+}
+
+
+
+
 
 

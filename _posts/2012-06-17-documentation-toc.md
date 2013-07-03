@@ -74,7 +74,7 @@ Classes
 
 ### [No curly braces needed around member-variable declarations](#nocurlyvars)
 
-### [Declarations of properties of the same type can be grouped together](#groupproperties)
+### [Simpler property declarations](#simplerproperties)
 
 ### [Method *instancetype* parameters] (#instancetypeparams)
 

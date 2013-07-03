@@ -6,12 +6,15 @@ position: 4
 ---
 
 
-<div id="docbackground" class="softbackgroundcolor">
+<div class="fullwidth floating softbackgroundcolor">
   <div id="documentation">
-    <div id="toc">
-      {{ site.posts[0].content }}
-    </div>
-    {{ site.posts[1].content }}
+    <div class="contentmargins">
+      <div id="toc">
+        {{ site.posts[0].content }}
+      </div>
+      <div>
+        {{ site.posts[1].content }}
+      </div>
   </div>
 </div>          
 
