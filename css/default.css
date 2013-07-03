@@ -129,6 +129,12 @@ nav li a {
   line-height: 1.4em;
 }
 
+.smallcopy {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 0.7em;
+}
+
 .copycolor {
   color:#444444;
 }
@@ -137,12 +143,20 @@ nav li a {
   color:#5C360E;
 }
 
+.logobackgroundcolor {
+  background-color:#5C360E;
+}
+
 .featuredbackgroundcolor {
   background-color:#D9F1F8;
 }
 
 .accentbackgoundcolor {
   background-color:#DDDDDD;
+}
+
+.softcolor {
+  color:#F4F4F4;
 }
 
 .softbackgroundcolor {
@@ -175,7 +189,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
 
 /*-------------- Code blocks --------------*/
 
@@ -230,6 +243,15 @@ pre {
   font-size: 0.9em;
 }
 
+/*-------------- Footer --------------*/
+
+#copyright {
+  color: #DFDFDF;
+  line-height: 3em;
+  padding: 0;
+}
+
+
 /*-------------- Home --------------*/
 
 #banner {
@@ -255,7 +277,6 @@ pre {
 #banner div:hover {
   text-decoration: none;
   background-color: #0071AE;
-//  00 91 CE
 }
 
 #facts {
@@ -272,6 +293,7 @@ pre {
   position: relative;
   float: inherit;
   padding-bottom: 2em;
+  min-height: 40em;
 }
 
 .benefit {
@@ -446,6 +468,7 @@ em {
 #github_links {
   padding-top: 2em;
   padding-bottom: 2em;
+  min-height: 60em;
 }
 
 #github_links ul {
@@ -460,7 +483,7 @@ em {
   float: inherit;
   margin-top: 1em;
   margin-bottom: 1em;
-  width: 10em;
+  width: 8.5em;
 }
 
 #about {
@@ -501,6 +524,7 @@ em {
   width: 40%;
   margin-top: 2em;
   margin-bottom: 2em;
+  min-height: 40em;
 }
 
 #my_pic {
@@ -588,6 +612,10 @@ pre.code_sample {
 
 .feature pre {
   display: inline;
+}
+
+#mainfeatures {
+  min-height: 40em;
 }
 
 #features_banner {
