@@ -74,13 +74,34 @@ nav li a {
   padding-bottom: 0.5em;
   padding-left: 0em;
   padding-right: 0em;
-  width: 16.66%;
+  width: 16.66%;   /* NOTE: based on number of menu items */
   min-width: 7.5em;
 
   font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
   font-size: 1.3em;
   text-align: center;
 }
+
+/* iPads and smaller
+*/
+@media (max-device-width: 768px) {
+  nav li a {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  }
+}
+
+/* iPhones and smaller
+*/
+@media (max-device-width: 640px) {
+  nav li a {
+    font-size: 2.2em;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    width: 33.33%;  /* NOTE: based on number of menu items */
+  }
+}
+
 
 #current, nav li a:hover {
   text-decoration: none;
@@ -217,15 +238,11 @@ pre {
 }
 
 .featured .logo {
-  position: relative;
-  padding-left: 75px; /* Adjust for kerning to align flush left */
-  padding-right: 75px;
+  margin-left: -0.05em; /* Adjust for kerning to align flush left */
 }
 
 .featured .tagline {
-  position: relative;
-  padding-left: 79px; /* Adjust for kerning to align flush left */
-  padding-right: 79px;
+  margin-left: -0.04em; /* Adjust for kerning to align flush left */
 }
 
 .featured .largecopy {
@@ -265,14 +282,24 @@ pre {
 
 #intro {
   float: inherit;
-  width: 15%;
+  width: 25em;
+  margin-right: 2em;
   margin-bottom: 1.5em;
+}
+
+
+/* iPhones and smaller
+*/
+@media (max-device-width: 640px) {
+  #intro {
+    width: 100%;
+  }
 }
 
 #intro .largecopy {
   margin-top: 1.25em;
-  width: 17em;
 }
+
 
 #banner div:hover {
   text-decoration: none;
@@ -280,7 +307,7 @@ pre {
 }
 
 #facts {
-  float: left;
+  float: inherit;
   padding-top: 2em;
   padding-bottom: 2em;
 }
@@ -311,6 +338,15 @@ pre {
   min-height: 9em;
 }
 
+/* iPhones and smaller
+*/
+@media (max-device-width: 640px) {
+  .benefit {
+    width: 100%;
+  }
+}
+
+
 .benefit .copy {
   margin-top: 0.8em;
 }
@@ -319,13 +355,25 @@ pre {
   font-weight: bold;
 }
 
+/* iPads and larger
+*/
+@media (min-device-width: 641px) {
+  #helloworld {
+    position: absolute;
+    top: 7.5em;
+    left: 35em;
+  }
+}
+
 #helloworld {
-  float: right;
-  margin-top: 2.5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+
   padding-top: 0.5em;
   padding-bottom: 0.3em;
   padding-left: 1em;
   padding-right: 2em;
+
   width: auto;
   height: auto;
 
@@ -338,6 +386,15 @@ pre {
 
 #helloworld pre {
   line-height: 1.5;
+}
+
+/* iPhones and smaller
+*/
+@media (max-device-width: 640px) {
+  #helloworld {
+    float: inherit;
+    width: 80%;
+  }
 }
 
 
@@ -402,6 +459,7 @@ em {
 }
 
 #documentation pre {
+  overflow: auto;
   margin-top: 2em;
   margin-bottom: 2em;
   padding-left: 3em;
@@ -465,6 +523,16 @@ em {
   padding-bottom: 0.2em;  
 }
 
+
+/* iPhones and smaller
+*/
+@media (max-device-width: 640px) {
+  #documentation #toc h3 {
+    font-size: 1.2em;
+    letter-spacing: 0;
+  }
+}
+
 /*-------------- GitHub --------------*/
 
 #github_intro {
@@ -493,6 +561,16 @@ em {
   width: 8.5em;
 }
 
+/* iPhones and smaller
+*/
+@media (max-device-width: 640px) {
+  .contact_link {
+    width: 50%;
+    font-size: 1.6em;
+    line-height: 1.1em;
+  }
+}
+
 #about {
   position: inherit;
   float: inherit;
@@ -511,6 +589,17 @@ em {
   float: inherit;
   margin-top: 1.5em;
   width: 24em;
+}
+
+/* iPhones and smaller
+*/
+@media (max-device-width: 640px) {
+  #saarinen {
+    width: 100%;
+  }
+  #furniture {
+    width: 80%;
+  }
 }
 
 #furniture img {
@@ -540,6 +629,17 @@ em {
   width: 24em;
   margin-bottom: 2em;
   padding-right: 3em;
+}
+
+/* iPhones and smaller
+*/
+@media (max-device-width: 640px) {
+  #about_me {
+    width: 100%;
+  }
+  #my_pic {
+    width: 80%;
+  }
 }
 
 #my_pic img {
@@ -586,6 +686,14 @@ pre.code_sample {
   box-shadow: 10px 10px 5px #888;
 }
 
+/* iPhones and smaller
+*/
+@media (max-device-width: 640px) {
+  pre.code_sample  {
+    overflow: auto;
+  }
+}
+
 /*-------------- Features --------------*/
 
 .features {
@@ -599,8 +707,16 @@ pre.code_sample {
   margin-top: 1.5em;
   margin-right: 1.5em;
   width: 24em;
-//  min-width: 45%;
+/*  min-width: 45%; */
   min-height: 10em;
+}
+
+/* iPhones and smaller
+*/
+@media (max-device-width: 640px) {
+  .feature {
+    width: 100%;
+  }
 }
 
 .feature .copy {

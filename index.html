@@ -17,21 +17,25 @@ position: 1
     </a>
   </div>
 
-  <div id="helloworld" class="softbackgroundcolor contentmargins">
-    {% include helloworld.html %}
-  </div>
-  
-  <div class="logo logocolor">eero</div>
-  
-  <div class="tagline logocolor">objective-c, evolved</div>
+  <div class="floating contentmargins">
 
-  <div id="intro">
-    <div class="largecopy copycolor contentmargins">
-      Eero is a dialect of Objective-C designed to make developers more
-      productive through improved code readability, maintainability, and safety.
+    <div class="logo logocolor">eero</div>
+
+    <div class="tagline logocolor">objective-c, evolved</div>
+
+    <div id="intro">
+      <div class="largecopy copycolor">
+        Eero is a dialect of Objective-C designed to make developers more
+        productive through improved code readability, maintainability, and safety.
+      </div>
     </div>
-  </div>
 
+    <div id="helloworld" class="softbackgroundcolor">
+      {% include helloworld.html %}
+    </div>
+    
+  </div>
+  
   <div id="facts" class="accentbackgoundcolor">
     <div class="largecopy copycolor contentmargins">
       <span>The myth?</span> “It’s just syntax.” <span>The fact:</span>
