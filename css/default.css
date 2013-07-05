@@ -270,7 +270,8 @@ pre {
 
 .featured .logo {
   margin-left: -0.05em; /* Adjust for kerning to align flush left */
-  margin-top: -0.32em; /* Adjust for kerning(?) to align flush top */
+  margin-top: -0.25em;   /* Adjust for kerning(?) to align flush top */
+  margin-bottom: -0.1em;
 }
 
 
