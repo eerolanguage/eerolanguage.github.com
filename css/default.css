@@ -340,6 +340,7 @@ pre {
 #download {
   clear: both;
   text-align: center;
+  font-size: 0.8em;
   width: 30%;
   padding-bottom: 2em;
 }
