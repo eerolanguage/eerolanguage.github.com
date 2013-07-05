@@ -416,9 +416,9 @@ pre {
   margin-bottom: 2em;
 
   padding-top: 0.5em;
-  padding-bottom: 0.3em;
-  padding-left: 1em;
-  padding-right: 2em;
+  padding-bottom: 0.5em;
+  padding-left: 2em;
+  padding-right: 3em;
 
   width: auto;
   height: auto;
@@ -437,8 +437,9 @@ pre {
 /* iPhones and smaller
 */
 @media (max-device-width: 640px) {
-  #helloworld {
-    width: 80%;
+  #helloworld pre {
+    font-size: 1.5em;
+    width: 100%;
   }
 }
 
