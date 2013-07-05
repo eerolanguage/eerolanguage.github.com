@@ -126,7 +126,7 @@ nav li a {
 
 .logo {
   font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 8em;
 }
 
@@ -271,7 +271,19 @@ pre {
 
 .featured .logo {
   margin-left: -0.05em; /* Adjust for kerning to align flush left */
+  margin-top: -0.32em; /* Adjust for kerning(?) to align flush top */
 }
+
+
+/* iPads and smaller
+*/
+@media (max-device-width: 768px) {
+  .featured .logo {
+    margin-top: -0.25em;   /* Adjust for kerning(?) to align flush top */
+    margin-bottom: -0.1em;
+  }
+}
+
 
 .featured .tagline {
   margin-left: -0.04em; /* Adjust for kerning to align flush left */
@@ -315,6 +327,10 @@ pre {
 .banner div:hover {
   text-decoration: none;
   background-color: #0071AE;
+}
+
+#intro_area {
+  margin-top: 2.5em;
 }
 
 #intro {
@@ -395,18 +411,8 @@ pre {
   font-weight: bold;
 }
 
-/* iPads and larger
-*/
-@media (min-device-width: 641px) {
-  #helloworld {
-    position: absolute;
-    top: 7.5em;
-    left: 35em;
-  }
-}
-
 #helloworld {
-  margin-top: 2em;
+  floating: inherit;
   margin-bottom: 2em;
 
   padding-top: 0.5em;
@@ -432,7 +438,6 @@ pre {
 */
 @media (max-device-width: 640px) {
   #helloworld {
-    float: inherit;
     width: 80%;
   }
 }

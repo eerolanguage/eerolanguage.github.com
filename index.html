@@ -17,29 +17,33 @@ position: 1
     </a>
   </div>
 
-  <div class="floating contentmargins">
+  <div id="intro_area" class="floating contentmargins">
 
-    <div class="logo logocolor">eero</div>
+    <div class=floating>
+      <div class="logo logocolor">eero</div>
 
-    <div class="tagline logocolor">objective-c, evolved</div>
+      <div class="tagline logocolor">objective-c, evolved</div>
 
-    <div id="intro">
-      <div class="largecopy copycolor">
-        Eero is a dialect of Objective-C designed to make developers more
-        productive through improved code readability, maintainability, and safety.
+      <div id="intro">
+        <div class="largecopy copycolor">
+          Eero is a dialect of Objective-C designed to make developers more
+          productive through improved code readability, maintainability, and safety.
+        </div>
+      </div>
+
+      <div id="download" class="banner">
+        <a href="http://downloads.eerolanguage.org" class="bannerforegroundcolor">
+          <div class="largecopy bannertext bannerbackgroundcolor">
+              Download
+          </div>
+        </a>
       </div>
     </div>
 
-    <div id="download" class="banner">
-      <a href="http://downloads.eerolanguage.org" class="bannerforegroundcolor">
-        <div class="largecopy bannertext bannerbackgroundcolor">
-            Download
-        </div>
-      </a>
-    </div>
-
-    <div id="helloworld" class="softbackgroundcolor">
-      {% include helloworld.html %}
+    <div class="floating">
+      <div id="helloworld" class="softbackgroundcolor">
+        {% include helloworld.html %}
+      </div>
     </div>
 
   </div>
