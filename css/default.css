@@ -78,7 +78,7 @@ nav li a {
   width: 16.66%;   /* NOTE: based on number of menu items */
   min-width: 7.5em;
 
-  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
+  font-family: 'Eurostile W01 Regular', Helvetica;
   font-size: 1.3em;
   text-align: center;
 }
@@ -125,13 +125,12 @@ nav li a {
 }
 
 .logo {
-  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
-  font-weight: bold;
+  font-family: 'Eurostile W01 Bold', Helvetica;
   font-size: 8em;
 }
 
 .tagline {
-  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
+  font-family: 'Eurostile W01 Regular', Helvetica;
   font-weight: normal;
   font-size: 3em;
 }
@@ -145,8 +144,8 @@ nav li a {
 }
 
 .largecopy {
-  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
-  font-weight: lighter;
+  font-family: 'Eurostile W01 Regular', Helvetica;
+  font-weight: normal;
   font-size: 1.5em;
   line-height: 1.2em;
 }
@@ -447,7 +446,7 @@ pre {
 /*-------------- Documentation --------------*/
 
 h1 {
-  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
+  font-family: 'Eurostile W01 Regular', Helvetica;
   font-weight: bold;
   font-size: 1.6em;
   line-height: 1.2em;
@@ -455,7 +454,7 @@ h1 {
 }
 
 h2 {
-  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
+  font-family: 'Eurostile W01 Regular', Helvetica;
   font-weight: normal;
   font-size: 1.6em;
   line-height: 1.2em;
@@ -661,7 +660,7 @@ em {
 
 #furniture figcaption {
   padding-top: 0.75em;
-  font-family: Eurostile, 'Eurostile W01 Regular', Helvetica;
+  font-family: 'Eurostile W01 Regular', Helvetica;
   text-align: right;
 }
 
