@@ -303,13 +303,18 @@ pre {
 
 /*-------------- Home --------------*/
 
-#banner {
+.banner {
   position: relative;
   margin-top: 1.5em;
 }
 
-#banner a {
+.banner a {
   text-decoration: none;
+}
+
+.banner div:hover {
+  text-decoration: none;
+  background-color: #0071AE;
 }
 
 #intro {
@@ -332,11 +337,13 @@ pre {
   margin-top: 1.25em;
 }
 
-
-#banner div:hover {
-  text-decoration: none;
-  background-color: #0071AE;
+#download {
+  clear: both;
+  text-align: center;
+  width: 30%;
+  padding-bottom: 2em;
 }
+
 
 #facts {
   float: inherit;
