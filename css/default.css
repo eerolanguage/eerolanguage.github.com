@@ -369,7 +369,7 @@ pre {
 }
 
 #facts span {
-  font-weight: bold;
+  font-family: 'Eurostile W01 Bold', Helvetica;
 }
 
 #dfquote {
@@ -408,7 +408,7 @@ pre {
 }
 
 .benefit span {
-  font-weight: bold;
+  font-family: 'Eurostile W01 Bold', Helvetica;
 }
 
 #helloworld {
@@ -779,7 +779,7 @@ pre.code_sample {
 }
 
 .feature span {
-  font-weight: bold;
+  font-family: 'Eurostile W01 Bold', Helvetica;
 }
 
 .feature ul {
