@@ -904,7 +904,7 @@ v.push_back(<span class="mi">20</span>)
 </pre>
 </div>
 
-Please see the [Eero wiki](https://github.com/eerolanguage/eero/wiki) for more details.
+Please see the [Eero wiki](https://github.com/eerolanguage/eero/wiki/CPlusPlus) for more details.
 
 _Motivation_: interoperability
 
