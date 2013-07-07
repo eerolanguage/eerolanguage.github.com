@@ -394,6 +394,11 @@ pre {
   min-height: 9em;
 }
 
+.benefit pre {
+  display: inline;
+  font-size: 0.9em;
+}
+
 /* iPhones and smaller
 */
 @media (max-device-width: 640px) {
