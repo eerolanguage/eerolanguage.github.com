@@ -191,7 +191,7 @@ As in Objective-C, you can express array and dictionary literals with square and
 <div class="highlight">
 <pre><span class="n">myarray</span> <span class="p">:=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">]</span>
 
-<span class="n">mydict</span> <span class="p">:=</span> <span class="p">{</span> <span class="s">'a'</span> <span class="p">:</span> <span class="s">'A'</span><span class="p">,</span> <span class="s">'b'</span> <span class="p">:</span> <span class="s">'B'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'C'</span> <span class="p">}</span>
+<span class="n">mydict</span> <span class="p">:=</span> <span class="p">{</span> <span class="s">'a'</span> <span class="p">:</span> <span class="s">'A'</span><span class="p">,</span> <span class="s">'b'</span> <span class="p">:</span> <span class="s">'B'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">:</span> <span class="s">'C'</span> <span class="p">}</span>
 </pre>
 </div>
 
