@@ -120,14 +120,31 @@ _Motivation_: readability
 Variables and literals
 ----------------------
 
-### Object declarations are assumed to be pointers
+### Class types are pointer types
 
-Since Objective-C objects are always references (pointers to objects), it is never valid to define object variables as anything but pointers. Instead of issuing an error, Eero implicitly treats all declarations of a class type as a pointer to that type. This means that no associated asterisk is needed.
+In Objective-C, objects are always references (pointers to objects), and it is never valid to define object variables as anything but pointers. Eero takes advantage of this fact to simplify things: it treats all variable declarations of a class type as a pointer to that type. This means no asterisk is used in the declaration.
 
 <div class="highlight">
 <pre><span class="kt">NSString</span> <span class="n">mystring</span> <span class="o">=</span> <span class="n">myobject</span>.<span class="n">description</span>
 </pre>
 </div>
+
+You can think of class names as *typedef*s to the equivalent pointer types. So if you do provide an asterisk, it will be a pointer to a pointer:
+
+<div class="highlight">
+<pre><span class="kt">NSError*</span> <span class="n">error</span> <span class="c1">// can be used to pass an error object by reference</span>
+</pre>
+</div>
+
+These rules apply to casts as well:
+
+<div class="highlight">
+<pre><span class="kt">NSString</span> <span class="n">mystring</span> <span class="n">=</span> <span class="p">(</span><span class="kt">NSString</span><span class="p">)</span> <span class="n">someObject</span>
+</pre>
+</div>
+
+
+
 
 _Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
@@ -652,13 +669,6 @@ _Motivation_: readability
 
 Special object casts (boxing and unboxing)
 ------------------------------------------
-
-**Note:** Although not directly related to these conversions, casting an object variable to a class (without the trailing "\*") simply casts the object to the target class type. This is in line with Eero's general class-name policy:
-
-<div class="highlight">
-<pre><span class="n">mystring</span> <span class="n">:=</span> <span class="p">(</span><span class="kt">String</span><span class="p">)</span> <span class="n">someObject</span>  <span class="c1">// same as "(String*) someObject"</span>
-</pre>
-</div>
 
 ### Converting primitive data types to objects (boxing)
 

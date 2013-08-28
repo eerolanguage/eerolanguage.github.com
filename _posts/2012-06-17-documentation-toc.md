@@ -31,7 +31,7 @@ Namespaces
 Variables and literals
 ----------------------
 
-### [Object declarations are assumed to be pointers](#objectsarepointers)
+### [Class types are pointer types](#objectsarepointers)
 
 ### [Local type inference](#typeinference)
 
