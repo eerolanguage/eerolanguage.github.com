@@ -521,9 +521,10 @@ p strong {
 }
 
 #documentation ul {
-  list-style-position: inside;
+  list-style-position: outside;
   list-style-type: disc;
   font-family: Arial, Helvetica;
+  margin-left: 1em;
 }
 
 #documentation table {
