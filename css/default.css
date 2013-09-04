@@ -108,6 +108,14 @@ nav li a {
   background-color:#5F360A;
 }
 
+#current {
+  background-color:#5F360A;
+}
+
+nav li a:hover {
+  background-color:#0071AE;
+}
+
 /*------------ General content ------------*/
 
 .contentmargins {
