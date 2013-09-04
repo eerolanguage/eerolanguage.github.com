@@ -41,6 +41,8 @@ Variables and literals
 
 ### [No '@' needed for array and dictionary literals](#noatliterals)
 
+### [No '@()' needed for primitive members of array and dictionary literals](#autoboxingcollections)
+
 ### [Mutable array and dictionary literals](#mutableliterals)
 
 ### [Variable definitions using type inference and *nil* or *Nil*](#inferrednils)

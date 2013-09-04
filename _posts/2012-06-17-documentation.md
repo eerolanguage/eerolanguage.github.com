@@ -208,7 +208,23 @@ As in Objective-C, you can express array and dictionary literals with square and
 <div class="highlight">
 <pre><span class="n">myarray</span> <span class="p">:=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">]</span>
 
-<span class="n">mydict</span> <span class="p">:=</span> <span class="p">{</span> <span class="s">'a'</span> <span class="p">:</span> <span class="s">'A'</span><span class="p">,</span> <span class="s">'b'</span> <span class="p">:</span> <span class="s">'B'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'C'</span> <span class="p">}</span>
+<span class="n">mydict</span> <span class="p">:=</span> <span class="p">{</span> <span class="s">'a'</span> <span class="p">:</span> <span class="s">'A'</span><span class="p">,</span> <span class="s">'b'</span> <span class="p">:</span> <span class="s">'B'</span><span class="p">,</span> <span class="s">'c'</span><span class="p"> : </span><span class="s">'C'</span> <span class="p">}</span>
+</pre>
+</div>
+
+
+_Motivation_: readability, [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+
+<a name="autoboxingcollections"> </a>
+### No '@()' needed for primitive members of array and dictionary literals
+
+Members of collection literals having the appropriate primitive data types get
+automatically boxed via implicit @() directives. This includes variables and literals.
+
+<div class="highlight">
+<pre><span class="n">myarray</span> <span class="p">:=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">mydict</span> <span class="p">:=</span> <span class="p">{</span> <span class="s">'x'</span> <span class="p">:</span> <span class="mi">1.5</span><span class="p">,</span> <span class="s">'y'</span> <span class="p">:</span> <span class="mi">2.5</span><span class="p">,</span> <span class="s">'z'</span><span class="p"> : </span><span class="n">somevariable</span> <span class="p">}</span>
 </pre>
 </div>
 
@@ -571,7 +587,17 @@ _Motivation_: safety
 Object operators
 ----------------
 
-Eero supports a limited set of common operators for Objective-C objects. All operands involved must be objects. The operators are, in fact, aliases for certain methods. However, the operators follow the same precedence rules as their primitive-data-type counterparts.
+Eero supports a limited set of common operators for Objective-C objects. The operators are, in fact, aliases for certain methods. However, the operators follow the same precedence rules as their primitive-data-type counterparts.
+
+For any given operator expression, at least one of the operands must be an object (this includes blocks as right-hand-side operands). Non-object operands of the appropriate primitive type get automatically boxed by an implicit __@()__ directive. Operand autoboxing applies to all binary, but not subscript, operators.
+
+<div class="highlight">
+<pre>
+<span class="kt">Number</span> <span class="n">mynumber </span>
+...
+<span class="n">mynumber</span> <span class="o">+</span> <span class="mi">100</span><span class="c1">  // "100" gets implicitly boxed as "@(100)"</span>
+</pre>
+</div>
 
 ### Built-in equality and inequality comparison operators
 
@@ -586,12 +612,12 @@ For all objects, the comparison operators '==' (equals) and '!=' (not equal) map
 </pre>
 </div>
 
-You can still perform explicit address comparisons by casting both operands to *void** types.
+You can still perform explicit address comparisons by casting both operands to *void** types. Furthermore, object comparisons to *nil* and *Nil* __literals__ are always pointer comparisons, since the non-object operand isn't autoboxed.
 
 _Motivation_: readability, [WYSIWYG](http://en.wikipedia.org/wiki/Wysiwyg)
 
 <a name="stringplus"> </a>
-### Built-in '+' (binary version) and '<<' string operators
+### Built-in '+' (binary version) and '&lt;&lt;' string operators
 
 When the '+' binary operator is used, *stringByAppendingString* will be sent to instances of classes or protocols that respond to it (mainly NSString and its subclasses):
 
@@ -603,7 +629,7 @@ When the '+' binary operator is used, *stringByAppendingString* will be sent to 
 </pre>
 </div>
 
-When the '<<' binary operator is used, *appendString* will be sent to instances of classes or protocols that respond to it (mainly MutableString):
+When the '&lt;&lt;' binary operator is used, *appendString* will be sent to instances of classes or protocols that respond to it (mainly MutableString):
 
 <div class="highlight">
 <pre><span class="n">mystring</span> <span class="p">:</span><span class="o">=</span> <span class="s">''</span>
@@ -625,13 +651,15 @@ The following chart shows the supported object binary operators and resulting me
 <tr><td class="centered-cell"><code>*</code></td><td>multipliedBy</td><td>includes implicit support for <code>*=</code></td></tr>	
 <tr><td class="centered-cell"><code>/</code></td><td>dividedBy</td><td>includes implicit support for <code>/=</code></td></tr>	
 <tr><td class="centered-cell"><code>%</code></td><td>modulo</td><td>includes implicit support for <code>%=</code></td></tr>	
-<tr><td class="centered-cell"><code>&lt;</code></td><td>isLess</td><td></td></tr>
-<tr><td class="centered-cell"><code>&gt;</code></td><td>isGreater</td><td></td></tr>	
-<tr><td class="centered-cell"><code>&lt;=</code></td><td>isGreater</td><td>result is <code>!(left.isGreater:right)</code></td></tr>	
-<tr><td class="centered-cell"><code>&gt;=</code></td><td>isLess</td><td>result is <code>!(left.isLess:right)</code></td></tr>	
+<tr><td class="centered-cell"><code>&lt;</code></td><td>isLessThan</td><td></td></tr>
+<tr><td class="centered-cell"><code>&gt;</code></td><td>isGreaterThan</td><td></td></tr>	
+<tr><td class="centered-cell"><code>&lt;=</code></td><td>isGreaterThan</td><td>result is <code>!(left.isGreaterThan:right)</code></td></tr>	
+<tr><td class="centered-cell"><code>&gt;=</code></td><td>isLessThan</td><td>result is <code>!(left.isLessThan:right)</code></td></tr>	
 <tr><td class="centered-cell"><code>&lt;&lt;</code></td><td>shiftLeft</td><td></td></tr>	
 <tr><td class="centered-cell"><code>&gt;&gt;</code></td><td>shiftRight</td><td></td></tr>
 </table>
+
+Note that methods *isLessThan* and *isGreaterThan* are found in Foundation protocol NSComparisonMethods, providing convenient comparison operators for many objects.
 
 _Motivation_: readability
 
@@ -677,7 +705,6 @@ Special object casts (boxing and unboxing)
 <div class="highlight">
 <pre><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">ageAsNumberObject</span> <span class="o">:=</span> <span class="p">(</span><span class="kt">Number</span><span class="p">)</span> <span class="n">age</span>  <span class="c1">// same as (Number numberWithUnsignedInt: age)</span>
-<span class="n">array</span> <span class="o">:=</span> <span class="p">[</span> <span class="p">(</span><span class="kt">Number</span><span class="p">)</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="kt">Number</span><span class="p">)</span> <span class="mf">2.0</span><span class="p">,</span> <span class="p">(</span><span class="kt">Number</span><span class="p">)</span> <span class="mf">3.0</span> <span class="p">]</span>  <span class="c1">// same as (Number numberWithDouble: x)</span>
 </pre>
 </div>
 
