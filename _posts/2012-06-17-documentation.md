@@ -589,7 +589,7 @@ Object operators
 
 Eero supports a limited set of common operators for Objective-C objects. The operators are, in fact, aliases for certain methods. However, the operators follow the same precedence rules as their primitive-data-type counterparts.
 
-For any given operator expression, at least one of the operands must be an object (this includes blocks as right-hand-side operands). Non-object operands of the appropriate primitive type get automatically boxed by an implicit __@()__ directive. Operand autoboxing applies to all binary, but not subscript, operators.
+For any given operator expression, at least one of the operands must be an object (this includes blocks as right-hand-side operands). Non-object operands of the appropriate primitive type get automatically boxed by an implicit @() directive. Operand autoboxing applies to all binary, but not subscript, operators.
 
 <div class="highlight">
 <pre>

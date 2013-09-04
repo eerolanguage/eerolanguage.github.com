@@ -520,11 +520,17 @@ p strong {
   padding-left: 3em;
 }
 
+#documentation ul {
+  list-style-position: inside;
+  list-style-type: disc;
+  font-family: Arial, Helvetica;
+}
+
 #documentation table {
   border: 1px;
   border-style: solid;
   border-color: #D6D6D6;
-  font-family: Helvetica, Arial;
+  font-family: Arial, Helvetica;
   font-weight: normal;
   font-size: 0.9em;
   line-height: 1.2em;
