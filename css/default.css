@@ -70,8 +70,7 @@ nav li a {
   float: left;
   border: 0;
 
-  margin-top: -0.1em;
-  padding-top: 0.5em;
+  padding-top: 0.6em;
   padding-bottom: 0.5em;
   padding-left: 0em;
   padding-right: 0em;
@@ -225,8 +224,8 @@ nav li a {
 
 .bannertext {
   line-height: 1.5em;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
+  padding-top: 0.5em;
+  padding-bottom: 0.4em;
 }
 
 .clearbackgroundcolor {
@@ -358,9 +357,8 @@ pre {
   text-align: center;
   font-size: 0.8em;
   width: 30%;
-  padding-bottom: 2em;
+  margin-bottom: 2em;
 }
-
 
 #facts {
   float: inherit;
