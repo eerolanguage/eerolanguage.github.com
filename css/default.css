@@ -159,7 +159,7 @@ nav li a {
 }
 
 .copy {
-  font-family: Arial;
+  font-family: 'Roboto Slab', Arial;
   font-weight: normal;
   font-size: 1em;
   line-height: 1.4em;
@@ -174,7 +174,7 @@ nav li a {
 }
 
 .smallcopy {
-  font-family: Arial;
+  font-family: 'Roboto Slab', Arial;
   font-weight: normal;
   font-size: 0.7em;
 }
@@ -493,6 +493,10 @@ em {
   font-style: italic;
 }
 
+p strong { 
+  font-weight: bold;
+}
+
 #documentation {
   position: relative;
   margin-top: 2em;
@@ -767,7 +771,11 @@ pre.code_sample {
   margin-right: 1.5em;
   width: 24em;
 /*  min-width: 45%; */
-  min-height: 10em;
+  min-height: 9em;
+}
+
+.bulletedfeature {
+  min-height: 11.2em;
 }
 
 /* iPhones and smaller
