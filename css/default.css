@@ -321,6 +321,7 @@ pre {
   color: #DFDFDF;
   padding-top: 1em;
   padding-bottom: 1em;
+  font-size: 0.8em;
 }
 
 
@@ -349,8 +350,16 @@ pre {
   width: 25em;
   margin-right: 2em;
   margin-bottom: 1.5em;
+  padding-right: 2em;
 }
 
+/* iPads and smaller
+*/
+@media (max-device-width: 768px) {
+  #intro {
+  padding-right: 0.5em;
+  }
+}
 
 /* iPhones and smaller
 */
