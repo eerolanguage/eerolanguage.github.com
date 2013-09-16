@@ -1,15 +1,30 @@
-<nav>
+<div class="navcontainer">
+  <nav>
+    <ul>
+      {% for iPage in site.pages %}
+        {% assign index = forloop.index %}
+        {% assign isLast = forloop.last %}
+        {% for jPage in site.pages %}
+          {% if jPage.position == index %}
+            {% if jPage.url == page.url %}
+              <li><a href="{{jPage.url}}" id="current" class="{{class}} menucolors">{{jPage.short-title}}</a></li>
+            {% else %}
+              <li><a href="{{jPage.url}}" class="{{class}} copycolor">{{jPage.short-title}}</a></li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}  
+      {% endfor %}  
+    </ul>
+  </nav>
+</div>
+<nav> <!-- Since the menu nav is z-index high, we need to account for its height -->
   <ul>
     {% for iPage in site.pages %}
       {% assign index = forloop.index %}
       {% assign isLast = forloop.last %}
       {% for jPage in site.pages %}
         {% if jPage.position == index %}
-          {% if jPage.url == page.url %}
-            <li><a href="{{jPage.url}}" id="current" class="{{class}} menucolors">{{jPage.short-title}}</a></li>
-          {% else %}
-            <li><a href="{{jPage.url}}" class="{{class}} copycolor">{{jPage.short-title}}</a></li>
-          {% endif %}
+          <li><a class="{{class}}">&nbsp;</a></li>
         {% endif %}
       {% endfor %}  
     {% endfor %}  
