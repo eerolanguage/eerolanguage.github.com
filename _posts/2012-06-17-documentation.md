@@ -652,14 +652,14 @@ The following chart shows the supported object binary operators and resulting me
 <tr><td class="centered-cell"><code>/</code></td><td>dividedBy</td><td>includes implicit support for <code>/=</code></td></tr>	
 <tr><td class="centered-cell"><code>%</code></td><td>modulo</td><td>includes implicit support for <code>%=</code></td></tr>	
 <tr><td class="centered-cell"><code>&lt;</code></td><td>isLessThan</td><td></td></tr>
+<tr><td class="centered-cell"><code>&lt;=</code></td><td>isLessThanOrEqualTo</td><td></td></tr>   
 <tr><td class="centered-cell"><code>&gt;</code></td><td>isGreaterThan</td><td></td></tr>	
-<tr><td class="centered-cell"><code>&lt;=</code></td><td>isGreaterThan</td><td>result is <code>!(left.isGreaterThan:right)</code></td></tr>	
-<tr><td class="centered-cell"><code>&gt;=</code></td><td>isLessThan</td><td>result is <code>!(left.isLessThan:right)</code></td></tr>	
+<tr><td class="centered-cell"><code>&gt;=</code></td><td>isGreaterThanOrEqualTo</td><td></td></tr>	
 <tr><td class="centered-cell"><code>&lt;&lt;</code></td><td>shiftLeft</td><td></td></tr>	
 <tr><td class="centered-cell"><code>&gt;&gt;</code></td><td>shiftRight</td><td></td></tr>
 </table>
 
-Note that methods *isLessThan* and *isGreaterThan* are found in Foundation protocol NSComparisonMethods, providing convenient comparison operators for many objects.
+Note that methods *isLessThan* and *isGreaterThan* (and "OrEqualTo" counterparts) are found in Foundation protocol NSComparisonMethods, providing convenient comparison operators for many objects.
 
 _Motivation_: readability
 
