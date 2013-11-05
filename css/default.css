@@ -63,7 +63,7 @@ html, body {
   width: 100%;
   z-index: 2;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 nav li {
@@ -84,6 +84,7 @@ nav li a {
   font-family: 'Museo Sans W01 500', Helvetica;
   font-size: 1.3em;
   text-align: center;
+  color: rgba(153,153,153,1);
 }
 
 /* iPads and smaller
@@ -108,16 +109,13 @@ nav li a {
 
 #current, nav li a:hover {
   text-decoration: none;
-  color: #f6f6f6;
-  background-color:#5F360A;
+  color: rgba(255,255,255,1);
 }
 
 #current {
-  background-color:#5F360A;
 }
 
 nav li a:hover {
-  background-color:#0071AE;
 }
 
 /*------------ General content ------------*/
@@ -199,19 +197,19 @@ nav li a:hover {
 }
 
 .logocolor {
-  color:#5C360E;
+  color: rgba(64,64,64,1);
 }
 
 .logobackgroundcolor {
-  background-color:#5C360E;
+  background-color: rgba(0,0,0,0.8);
 }
 
 .featuredbackgroundcolor {
-  background-color:#D9F1F8;
+  background-color:#FFFFFF;
 }
 
 .accentbackgoundcolor {
-  background-color:#DDDDDD;
+  background-color:#F0F0F0;
 }
 
 .softcolor {
@@ -219,7 +217,7 @@ nav li a:hover {
 }
 
 .softbackgroundcolor {
-  background-color:#F4F4F4;
+  background-color:#FFFFFF;
 }
 
 .bannerforegroundcolor {
@@ -257,7 +255,6 @@ pre {
   line-height: 1.6;
   overflow: hidden;
   color: #333333;
-  background-color: #F4F4F4;
   border: 0;
 /* 
   padding: 6px 10px;
@@ -308,7 +305,6 @@ pre .c1 {
 }
 
 .featured .largecopy {
-  position: relative;
 }
 
 .featured .copy {
@@ -335,7 +331,7 @@ pre .c1 {
 /*-------------- Home --------------*/
 
 .banner {
-  position: relative;
+/*  position: relative; */
   margin-top: 1.5em;
 }
 
@@ -348,7 +344,7 @@ pre .c1 {
   background-color: #0071AE;
 }
 
-#intro_area {
+.intro_area {
   margin-top: 2.5em;
 }
 
@@ -654,8 +650,8 @@ p strong {
 /*-------------- GitHub --------------*/
 
 #github_intro {
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
 }
 
 #github_links {
@@ -865,12 +861,12 @@ pre.code_sample {
 }
 
 #features_banner {
-  position: relative;
   margin-top: 1.5em;
 }
 
 #whatiseero {
-  padding-top: 1em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
 }
 
 
