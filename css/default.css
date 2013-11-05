@@ -81,7 +81,7 @@ nav li a {
   width: 16.66%;   /* NOTE: based on number of menu items */
   min-width: 7.5em;
 
-  font-family: 'Eurostile W01 Regular', Helvetica;
+  font-family: 'Museo Sans W01 500', Helvetica;
   font-size: 1.3em;
   text-align: center;
 }
@@ -142,7 +142,6 @@ nav li a:hover {
 
 .tagline {
   font-family: 'Eurostile W01 Regular', Helvetica;
-  font-weight: normal;
   font-size: 3em;
 }
 
@@ -155,8 +154,7 @@ nav li a:hover {
 }
 
 .largecopy {
-  font-family: 'Eurostile W01 Regular', Helvetica;
-  font-weight: normal;
+  font-family: 'Museo Sans W01 300', Helvetica;
   font-size: 1.5em;
   line-height: 1.2em;
 }
@@ -170,8 +168,7 @@ nav li a:hover {
 }
 
 .copy {
-  font-family: 'Roboto Slab', Arial;
-  font-weight: normal;
+  font-family: 'Museo Sans W01 500', Arial;
   font-size: 1em;
   line-height: 1.4em;
 }
@@ -185,8 +182,7 @@ nav li a:hover {
 }
 
 .smallcopy {
-  font-family: 'Roboto Slab', Arial;
-  font-weight: normal;
+  font-family: 'Museo Sans W01 500', Arial;
   font-size: 0.7em;
 }
 
@@ -256,7 +252,7 @@ a:hover {
 /*-------------- Code blocks --------------*/
 
 pre {
-  font-family: Menlo, Consolas, Monaco, "Liberation Mono", Courier, monospace;
+  font-family: 'Consolas W99 Regular', Consolas, Menlo, Courier, monospace;
   font-size: 1em;
   line-height: 1.6;
   overflow: hidden;
@@ -267,6 +263,17 @@ pre {
   padding: 6px 10px;
  */
 }
+
+pre em {
+  font-family: 'Consolas W99 Italic', 'Consolas-Italic', 'Menlo-Italic', 'Courier-Oblique';
+  font-style: normal !important;
+}
+
+pre .c1 {
+  font-family: 'Consolas W99 Italic', 'Consolas-Italic', 'Menlo-Italic', 'Courier-Oblique';
+  font-style: normal !important;
+}
+
 
 .nocodebox {
   background-color: inherit;
@@ -388,12 +395,12 @@ pre {
 }
 
 #facts span {
-  font-family: 'Eurostile W01 Bold', Helvetica;
+  font-family: 'Museo Sns W04 Cond 700', Helvetica;
 }
 
 #dfquote {
   margin-top: 1em;
-  font-style: italic;
+  font-family: "MuseoSansW01-500Italic";
   font-size: 0.9em;
 }
 
@@ -432,7 +439,7 @@ pre {
 }
 
 .benefit span {
-  font-family: 'Eurostile W01 Bold', Helvetica;
+  font-family: 'Museo Sns W04 Cond 700', Helvetica;
 }
 
 #helloworld {
@@ -471,49 +478,62 @@ pre {
 /*-------------- Documentation --------------*/
 
 h1 {
-  font-family: 'Eurostile W01 Regular', Helvetica;
-  font-weight: bold;
+  font-family: 'MyriadW08-BoldCondensed 1166610', Helvetica;
   font-size: 1.6em;
   line-height: 1.2em;
   color:#5C360E;
+}
+
+h1 em {
+  font-family: 'MyriadW08-BoldCondensed 1167283', Helvetica;
 }
 
 h2 {
-  font-family: 'Eurostile W01 Regular', Helvetica;
-  font-weight: normal;
+  font-family: 'MyriadW08-SemiboldConde', Helvetica;
   font-size: 1.6em;
   line-height: 1.2em;
   color:#5C360E;
 }
 
+h2 em {
+  font-family: 'MyriadW08-SemiboldCondI', Arial;
+}
+
 h3 {
-  font-family: Arial;
-  font-weight: bold;
-  font-size: 1.1em;
+  font-family: 'MyriadW08-SemiboldConde', Arial;
+  font-size: 1.3em;
   color:#444444;
 }
 
+h3 em {
+  font-family: 'MyriadW08-SemiboldCondI', Arial;
+}
+
 h4 {
-  font-family: Arial;
-  font-weight: normal;
+  font-family: 'Myriad Pro 1167301', Arial;
   font-size: 1.1em;
 }
 
+h4 em {
+  font-family: 'Myriad Pro 1167293', Arial;
+}
+
 p {
-  font-family: Arial;
-  font-weight: normal;
+  font-family: 'Myriad Pro Light 1166622', Arial;
   font-size: 1.1em;
   line-height: 1.4em;
   margin-bottom: 1em;
   color: #333;
 }
 
-em { 
-  font-style: italic;
+p em { 
+  font-family: 'Myriad Pro Light 1167297', 'Arial-Bold';
+  font-weight: normal;
 }
 
 p strong { 
-  font-weight: bold;
+  font-family: 'Myriad Pro 1167301', 'Arial-Bold';
+  font-weight: normal;
 }
 
 #documentation {
@@ -527,22 +547,23 @@ p strong {
   margin-bottom: 1em;
 }
 
-#documentation h3 {
+#documentation h3 {  
   margin-top: 2em;
   margin-bottom: 1em;
 }
 
 #documentation pre {
   overflow: auto;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  font-size: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
   padding-left: 3em;
 }
 
 #documentation ul {
   list-style-position: outside;
   list-style-type: disc;
-  font-family: Arial, Helvetica;
+  font-family: 'Museo Sans W01 500', Arial, Helvetica;
   margin-left: 1em;
 }
 
@@ -550,8 +571,7 @@ p strong {
   border: 1px;
   border-style: solid;
   border-color: #D6D6D6;
-  font-family: Arial, Helvetica;
-  font-weight: normal;
+  font-family: 'Museo Sans W01 500', Arial, Helvetica;
   font-size: 0.9em;
   line-height: 1.2em;
   color: #444444;
@@ -578,32 +598,43 @@ p strong {
 }
 
 #documentation table code {
-  font-family: Menlo, Consolas, Monaco, "Liberation Mono", Courier, monospace;
+  font-family: 'Consolas W99 Regular', Consolas, Menlo, Courier, monospace;
   font-size: 0.8em;
 }
 
 #documentation #toc h1 {
-    font-weight: normal;
+  font-family: 'Museo Sns W04 Cond 700';
+}
+
+#documentation #toc h1 em {
+  font-family: 'MuseoSnsW04-Cond700It';
 }
 
 #documentation #toc h2 {
-  font-size: 1.1em;
+  font-family: 'Museo Sns W04 Cond 700';
+  font-size: 1.3em;
   margin: 0;
   padding: 0;
   padding-top: 1em;
   padding-bottom: 0.5em;
 }
 
+#documentation #toc h2 em {
+  font-family: 'MuseoSnsW04-Cond700It';
+}
+
 #documentation #toc h3 {
-  font-size: 0.9em;
-  font-weight:lighter;
-  letter-spacing: 1px;
+  font-family: 'Museo Sans W01 500';
+  font-size: 1.0em;
   margin: 0;
   padding: 0;
   padding-top: 0.1em;  
   padding-bottom: 0.2em;  
 }
 
+#documentation #toc h3 em {
+  font-family: 'MuseoSansW01-500Italic';
+}
 
 /* iPhones and smaller
 */
@@ -617,7 +648,6 @@ p strong {
 */
 @media (max-device-width: 640px) {
   #documentation #toc h3 {
-    letter-spacing: 0;
   }
 }
 
@@ -696,7 +726,7 @@ p strong {
 
 #furniture figcaption {
   padding-top: 0.75em;
-  font-family: 'Eurostile W01 Regular', Helvetica;
+  font-family: 'Museo Sans W01 300', Helvetica;
   text-align: right;
 }
 
@@ -818,7 +848,7 @@ pre.code_sample {
 }
 
 .feature span {
-  font-family: 'Eurostile W01 Bold', Helvetica;
+  font-family: 'Museo Sns W04 Cond 700', Helvetica;
 }
 
 .feature ul {
