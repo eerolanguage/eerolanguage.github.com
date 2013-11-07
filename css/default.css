@@ -55,6 +55,20 @@ html, body {
   overflow-x: hidden;
 }
 
+/*------------ For sticky footer ------------*/
+
+html, body, #big_container { 
+  height: 100%; 
+}
+
+body > #big_container { 
+  height: auto; 
+  min-height: 100%; 
+}
+
+#big_content { 
+  padding-bottom: 3em; 
+}
 
 /*------------ Navigation menu ------------*/
 
@@ -79,10 +93,10 @@ nav li a {
   padding-left: 0em;
   padding-right: 0em;
   width: 16.66%;   /* NOTE: based on number of menu items */
-  min-width: 7.5em;
+  min-width: 8em;
 
   font-family: 'Museo Sans W01 500', Helvetica;
-  font-size: 1.3em;
+  font-size: 1.2em;
   text-align: center;
   color: rgba(153,153,153,1);
 }
@@ -100,7 +114,7 @@ nav li a {
 */
 @media (max-device-width: 640px) {
   nav li a {
-    font-size: 2.6em;
+    font-size: 2.5em;
     width: 33.33%;  /* NOTE: based on number of menu items */
     padding-top: 0.7em;
     padding-bottom: 0.7em;
@@ -121,8 +135,9 @@ nav li a:hover {
 /*------------ General content ------------*/
 
 .contentmargins {
-  margin-left: 80px;
-  margin-right: 80px;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 950px;
 }
 
 .fullwidth {
@@ -197,7 +212,9 @@ nav li a:hover {
 }
 
 .logocolor {
-  color: rgba(64,64,64,1);
+  /*color: rgb(38,61,92);*/
+  color: rgba(0, 0, 0, 0.8);
+  /*color: rgba(64,64,64,1);*/
 }
 
 .logobackgroundcolor {
@@ -225,7 +242,7 @@ nav li a:hover {
 }
 
 .bannerbackgroundcolor {
-  background-color:#0091CE;
+  background-color: rgb(66,88,117);
 }
 
 .bannertext {
@@ -320,6 +337,14 @@ pre .c1 {
 
 /*-------------- Footer --------------*/
 
+#footer {
+ clear: both;
+ position: relative;
+ z-index: 10;
+ height: 3em;
+ margin-top: 0;
+}
+
 #copyright {
   color: #DFDFDF;
   padding-top: 1em;
@@ -341,7 +366,7 @@ pre .c1 {
 
 .banner div:hover {
   text-decoration: none;
-  background-color: #0071AE;
+  background-color: rgb(38,61,92);
 }
 
 .intro_area {
@@ -385,7 +410,6 @@ pre .c1 {
 }
 
 #facts {
-  float: inherit;
   padding-top: 2em;
   padding-bottom: 2em;
 }
@@ -402,9 +426,8 @@ pre .c1 {
 
 .benefits {
   position: relative;
-  float: inherit;
+  float: left;
   padding-bottom: 2em;
-  min-height: 40em;
 }
 
 .benefit {
@@ -413,7 +436,7 @@ pre .c1 {
   margin-right: 1.5em;
   width: 30%;
   min-width: 15em;
-  min-height: 9em;
+/*  min-height: 9em; */
 }
 
 .benefit pre {
@@ -438,6 +461,10 @@ pre .c1 {
   font-family: 'Museo Sns W04 Cond 700', Helvetica;
 }
 
+#helloworld_container {
+  margin-top: 2em;
+}
+
 #helloworld {
   float: inherit;
   margin-bottom: 2em;
@@ -450,11 +477,11 @@ pre .c1 {
   width: auto;
   height: auto;
 
-  border: 1px;
+  border: 2px;
   border-style: solid;
   border-color: #D6D6D6;
 
-  box-shadow: 10px 10px 5px #888;
+  /*box-shadow: 10px 10px 5px #888;*/
 }
 
 #helloworld pre {
@@ -468,6 +495,9 @@ pre .c1 {
     font-size: 1.5em;
     width: 100%;
   }
+  #helloworld_container {
+    margin-top: 0;
+  }
 }
 
 
@@ -477,7 +507,7 @@ h1 {
   font-family: 'MyriadW08-BoldCondensed 1166610', Helvetica;
   font-size: 1.6em;
   line-height: 1.2em;
-  color:#5C360E;
+  color:#444444;
 }
 
 h1 em {
@@ -488,7 +518,7 @@ h2 {
   font-family: 'MyriadW08-SemiboldConde', Helvetica;
   font-size: 1.6em;
   line-height: 1.2em;
-  color:#5C360E;
+  color:#444444;
 }
 
 h2 em {
@@ -550,10 +580,14 @@ p strong {
 
 #documentation pre {
   overflow: auto;
-  font-size: 1em;
+  font-size: 0.9em;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
-  padding-left: 3em;
+  padding: 1em 1em;
+  border: 1px;
+  border-color: #DDDDDD !important;
+  border-style: solid;
+  border-radius: 0.4em;
 }
 
 #documentation ul {
@@ -567,7 +601,7 @@ p strong {
   border: 1px;
   border-style: solid;
   border-color: #D6D6D6;
-  font-family: 'Museo Sans W01 500', Arial, Helvetica;
+  font-family: 'Myriad Pro 1167301', Arial, Helvetica;
   font-size: 0.9em;
   line-height: 1.2em;
   color: #444444;
@@ -586,7 +620,9 @@ p strong {
 }
 
 #documentation table strong {
-  font-weight: bold;
+  font-family: 'MyriadW08-SemiboldConde', Arial, Helvetica;
+  font-weight: normal !important;
+  font-size: 1.2em;
 }
 
 #documentation table .centered-cell {
@@ -650,14 +686,13 @@ p strong {
 /*-------------- GitHub --------------*/
 
 #github_intro {
-  padding-top: 1.5em;
+  /*padding-top: 1.5em;*/
   padding-bottom: 1.5em;
 }
 
 #github_links {
-  padding-top: 2em;
+  /*padding-top: 2em;*/
   padding-bottom: 2em;
-  min-height: 60em;
 }
 
 #github_links ul {
@@ -668,9 +703,13 @@ p strong {
 
 /*-------------- Contact --------------*/
 
+.contact_banner {
+  margin-top: 1.5em;
+}
+
 .contact_link {
   float: inherit;
-  margin-top: 2em;
+  /*margin-top: 2em;*/
   margin-bottom: 2em;
   width: 12em;
 }
@@ -685,7 +724,7 @@ p strong {
 
 #about {
   position: inherit;
-  float: inherit;
+  float: left;
   padding-bottom: 2em;
 }
 
@@ -733,7 +772,6 @@ p strong {
   width: 40%;
   margin-top: 2em;
   margin-bottom: 2em;
-  min-height: 40em;
 }
 
 #my_pic {
@@ -792,13 +830,13 @@ p strong {
 }
  
 pre.code_sample {
-  border: 1px;
+  border: 2px;
   border-style: solid;
   border-color: #D6D6D6;
   line-height: 1.3em;
   padding: 2em;
   padding-bottom: 1em;
-  box-shadow: 10px 10px 5px #888;
+  /*box-shadow: 10px 10px 5px #888;*/
 }
 
 /* iPhones and smaller
@@ -857,7 +895,6 @@ pre.code_sample {
 }
 
 #mainfeatures {
-  min-height: 40em;
 }
 
 #features_banner {

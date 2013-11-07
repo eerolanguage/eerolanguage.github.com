@@ -7,16 +7,19 @@ position: 2
 
 <div class="featured fullwidth featuredbackgroundcolor">
 
- <div class="intro_area floating contentmargins">
-   <div class="logo logocolor">eero</div>
-   <div class="tagline logocolor">objective-c, evolved</div>
- </div>
-
-  <div id="whatiseero" class="floating largecopy copycolor contentmargins">
-     Eero is a fully header- and binary-compatible dialect of Objective-C that’s
-     implemented with a modified version of the Apple-sponsored LLVM/clang
-     open-source compiler. It was inspired by languages such as Smalltalk, Python,
-     and Ruby.
+  <div class="contentmargins">
+<!--
+    <div class="intro_area">
+      <div class="logo logocolor">eero</div>
+      <div class="tagline logocolor">objective-c, evolved</div>
+    </div>
+ -->
+    <div id="whatiseero" class="floating largecopy copycolor">
+       Eero is a fully header- and binary-compatible dialect of Objective-C that’s
+       implemented with a modified version of the Apple-sponsored LLVM/clang
+       open-source compiler. It was inspired by languages such as Smalltalk, Python,
+       and Ruby.
+    </div>
   </div>
 
   <div class="floating fullwidth largecopy bannertext bannerforegroundcolor bannerbackgroundcolor">
@@ -28,81 +31,85 @@ position: 2
 </div>
 
 <div class="fullwidth floating accentbackgoundcolor">
-  <div class="features contentmargins">
-    <div class="feature">
-      <span class="largecopy copycolor">universal dot notation</span>
-      <div class="copy copycolor">
-        End the dot-notation debate!
-        Eero now uses a universal dot notation for all message sending and property
-        access.
-        The result is greater simplicity, consistency, and readability.
+  <div class="contentmargins">  
+    <div class="features">
+      <div class="feature">
+        <span class="largecopy copycolor">universal dot notation</span>
+        <div class="copy copycolor">
+          End the dot-notation debate!
+          Eero now uses a universal dot notation for all message sending and property
+          access.
+          The result is greater simplicity, consistency, and readability.
+        </div>
       </div>
-    </div>
-    <div class="feature">
-      <span class="largecopy copycolor">simpler blocks</span>
-      <div class="copy copycolor">
-        In addition to features such as lambda&ndash;expression&ndash;like compact blocks and
-        nested function notation, Eero now simplifies block syntax even
-        further: no more “^” (carets) in block literals.
-      </div>
-    </div>    
-    <div class="feature">
-      <span class="largecopy copycolor">simpler property syntax</span>
-      <div class="copy copycolor">
-      Property declarations now look a lot like regular variable
-      declarations&mdash;no more <em>@property</em> in front.
-      Attributes, where needed, follow the property name and are enclosed in curly braces.
+      <div class="feature">
+        <span class="largecopy copycolor">simpler blocks</span>
+        <div class="copy copycolor">
+          In addition to features such as lambda&ndash;expression&ndash;like compact blocks and
+          nested function notation, Eero now simplifies block syntax even
+          further: no more “^” (carets) in block literals.
+        </div>
+      </div>    
+      <div class="feature">
+        <span class="largecopy copycolor">simpler property syntax</span>
+        <div class="copy copycolor">
+        Property declarations now look a lot like regular variable
+        declarations&mdash;no more <em>@property</em> in front.
+        Attributes, where needed, follow the property name and are enclosed in curly braces.
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <div id="mainfeatures" class="fullwidth floating softbackgroundcolor">
-  <div class="features contentmargins">
-    <div class="feature bulletedfeature">
-      <span class="largecopy copycolor">simpler syntax</span>
-      <div class="copy copycolor">
-        <ul>
-          <li>FAR fewer semicolons and <pre>@ * {} [] ()</pre> characters</li>
-          <li>Less need to see “NS” and other prefixes</li>
-          <li>Dot notation everywhere (no more square brackets)</li>
-          <li><a href="/documentation/">And more...</a></li>
-        </ul>
+  <div class="contentmargins">  
+    <div class="features">
+      <div class="feature bulletedfeature">
+        <span class="largecopy copycolor">simpler syntax</span>
+        <div class="copy copycolor">
+          <ul>
+            <li>FAR fewer semicolons and <pre>@ * {} [] ()</pre> characters</li>
+            <li>Less need to see “NS” and other prefixes</li>
+            <li>Dot notation everywhere (no more square brackets)</li>
+            <li><a href="/documentation/">And more...</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="feature bulletedfeature">
-      <span class="largecopy copycolor">less boilerplate code</span>
-      <div class="copy copycolor">
-        <ul>
-          <li>Local type inference</li>
-          <li>Default method variable names</li>
-          <li>Optional method parameters and default arguments</li>
-          <li>NSRange literals, loops, and subscripts (slices)</li>
-          <li><a href="/documentation/">And more...</a></li>
-        </ul>
+      <div class="feature bulletedfeature">
+        <span class="largecopy copycolor">less boilerplate code</span>
+        <div class="copy copycolor">
+          <ul>
+            <li>Local type inference</li>
+            <li>Default method variable names</li>
+            <li>Optional method parameters and default arguments</li>
+            <li>NSRange literals, loops, and subscripts (slices)</li>
+            <li><a href="/documentation/">And more...</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="feature bulletedfeature">
-      <span class="largecopy copycolor">operator overloading</span>
-      <div class="copy copycolor">
-        <ul>
-          <li>Convenient object “==” <em>isEqual</em> operators</li>
-          <li>Built-in “+” and “&lt;&lt;” string concat operators</li>
-          <li>Many common operators that can be user-overloaded
-              <pre>(+, -, *, <, <<,</pre> etc.)</li>
-          <li><a href="/documentation/">And more...</a></li>
-        </ul>
+      <div class="feature bulletedfeature">
+        <span class="largecopy copycolor">operator overloading</span>
+        <div class="copy copycolor">
+          <ul>
+            <li>Convenient object “==” <em>isEqual</em> operators</li>
+            <li>Built-in “+” and “&lt;&lt;” string concat operators</li>
+            <li>Many common operators that can be user-overloaded
+                <pre>(+, -, *, <, <<,</pre> etc.)</li>
+            <li><a href="/documentation/">And more...</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="feature bulletedfeature">
-      <span class="largecopy copycolor">code safety</span>
-      <div class="copy copycolor">
-        <ul>
-          <li>Enhanced <em>switch</em> with case ranges, lists, and no fall-through
-          <li>Method <em>instancetype</em> parameters</li>
-          <li>No variable shadowing</li>
-          <li><a href="/documentation/">And more...</a></li>
-        </ul>
+      <div class="feature bulletedfeature">
+        <span class="largecopy copycolor">code safety</span>
+        <div class="copy copycolor">
+          <ul>
+            <li>Enhanced <em>switch</em> with case ranges, lists, and no fall-through
+            <li>Method <em>instancetype</em> parameters</li>
+            <li>No variable shadowing</li>
+            <li><a href="/documentation/">And more...</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

@@ -5,35 +5,33 @@ short-title: code sample
 position: 3
 ---
 
-<div class="featured featuredbackgroundcolor">
+<div class="featured fullwidth floating featuredbackgroundcolor">
+  <div class="intro_area contentmargins">
+    <div class="floating">
+<!-- 
+      <div class="logo logocolor">eero</div>
+      <div class="tagline logocolor">objective-c, evolved</div>
+ -->
+      <div id="github_intro" class="floating largecopy copycolor">
+        Below is a small code sample comparing Objective-C to Eero. You can find iOS and
+        Mac example apps written in Eero in the
+        <a href="https://github.com/eerolanguage/eero/tree/master/examples">examples section on github</a>.
+      </div>
 
- <div class="intro_area floating contentmargins">
-   <div class="logo logocolor">eero</div>
-   <div class="tagline logocolor">objective-c, evolved</div>
- </div>
+      <div id="objc_sample">
+        <div class="largecopy copycolor">
+          objective-c
+        </div>
+        <pre class="code_sample clearbackgroundcolor">{% include sample.m %}</pre>
+      </div>
 
-  <div id="github_intro" class="floating largecopy copycolor contentmargins">
-    Below is a small code sample comparing Objective-C to Eero. You can find iOS and
-    Mac example apps written in Eero in the
-    <a href="https://github.com/eerolanguage/eero/tree/master/examples">examples section on github</a>.
+      <div id="eero_sample">
+        <div class="largecopy copycolor">
+          eero
+        </div>
+        <pre class="code_sample clearbackgroundcolor">{% include sample.eero %}</pre>
+      </div>
   </div>
 </div>
-
-<div class="featured fullwidth softbackgroundcolor">     
-  <div id="objc_sample" class="contentmargins">
-    <div class="largecopy copycolor">
-      objective-c
-    </div>
-    <pre class="code_sample clearbackgroundcolor">{% include sample.m %}
-    </pre>
-  </div>
-
-  <div id="eero_sample" class="contentmargins">
-    <div class="largecopy copycolor">
-      eero
-    </div>
-    <pre class="code_sample clearbackgroundcolor">{% include sample.eero %}
-    </pre>
-  </div>
 </div>
 
