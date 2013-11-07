@@ -474,15 +474,13 @@ pre .c1 {
 }
 
 #helloworld_container {
-  margin-top: 0.7em;
-  /*width: 45%;*/
+  margin-top: 2.3em;
+  margin-bottom: 2em;
 }
 
 #helloworld_image {
   float: inherit;
-  margin-top: 1.5em;
   width: 28em;
-  margin-bottom: 2em;
 }
 
 /* iPads and smaller
