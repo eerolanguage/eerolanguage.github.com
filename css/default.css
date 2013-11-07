@@ -376,9 +376,9 @@ pre .c1 {
 #intro {
   float: inherit;
   width: 25em;
-  margin-right: 2em;
+  margin-right: 1em;
   margin-bottom: 1.5em;
-  padding-right: 2em;
+  padding-right: 1.5em;
 }
 
 /* iPads and smaller
@@ -412,6 +412,7 @@ pre .c1 {
 #facts {
   padding-top: 2em;
   padding-bottom: 2em;
+  font-size: 0.9em;
 }
 
 #facts span {
@@ -462,30 +463,30 @@ pre .c1 {
 }
 
 #helloworld_container {
-  margin-top: 2em;
+  margin-top: 0.7em;
+  /*width: 45%;*/
 }
 
-#helloworld {
+#helloworld_image {
   float: inherit;
+  margin-top: 1.5em;
+  width: 28em;
   margin-bottom: 2em;
-
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 2em;
-  padding-right: 3em;
-
-  width: auto;
-  height: auto;
-
-  border: 2px;
-  border-style: solid;
-  border-color: #D6D6D6;
-
-  /*box-shadow: 10px 10px 5px #888;*/
 }
 
-#helloworld pre {
-  line-height: 1.5;
+/* iPads and smaller
+*/
+@media (max-device-width: 768px) {
+  #helloworld_image {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+  }
+}
+
+#helloworld_image img {
+  display: block;
+  width: 100%;
 }
 
 /* iPhones and smaller
@@ -680,6 +681,10 @@ p strong {
 */
 @media (max-device-width: 640px) {
   #documentation #toc h3 {
+    /*font-family: 'Museo Sns W04 Cond 700';*/
+  }
+  #documentation #toc h3 em {
+    /*font-family: 'MuseoSnsW04-Cond700It';*/
   }
 }
 
@@ -718,7 +723,7 @@ p strong {
 */
 @media (max-device-width: 640px) {
   .contact_link {
-    width: 50%;
+    width: 100%;
   }
 }
 
