@@ -352,6 +352,17 @@ pre .c1 {
   font-size: 0.8em;
 }
 
+/* iPhones and smaller
+*/
+@media (max-device-width: 640px) {
+  #footer {
+    height: 5em;
+  }
+  #copyright {
+    font-size: 1.5em;
+  }
+}
+
 
 /*-------------- Home --------------*/
 
