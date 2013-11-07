@@ -77,7 +77,7 @@ body > #big_container {
   width: 100%;
   z-index: 2;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 nav li {
@@ -149,13 +149,13 @@ nav li a:hover {
 }
 
 .logo {
-  font-family: 'Eurostile W01 Bold', Helvetica;
-  font-size: 8em;
+  font-family: 'MicrogrammaW01-MediumEx', Helvetica;
+  font-size: 7em;
 }
 
 .tagline {
-  font-family: 'Eurostile W01 Regular', Helvetica;
-  font-size: 3em;
+  font-family: 'MicrogrammaW01-MediumEx', Helvetica;
+  font-size: 2em;
 }
 
 /* iPhones and smaller
@@ -213,12 +213,12 @@ nav li a:hover {
 
 .logocolor {
   /*color: rgb(38,61,92);*/
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.85);
   /*color: rgba(64,64,64,1);*/
 }
 
 .logobackgroundcolor {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.85);
 }
 
 .featuredbackgroundcolor {
@@ -301,9 +301,9 @@ pre .c1 {
 }
 
 .featured .logo {
-  margin-left: -0.05em; /* Adjust for kerning to align flush left */
-  margin-top: -0.25em;   /* Adjust for kerning(?) to align flush top */
-  margin-bottom: -0.1em;
+  margin-left: -0.02em; /* Adjust for kerning to align flush left */
+  margin-top: -0.38em;   /* Adjust for kerning(?) to align flush top */
+  margin-bottom: -0.06em;
 }
 
 
@@ -314,14 +314,6 @@ pre .c1 {
     margin-top: -0.25em;   /* Adjust for kerning(?) to align flush top */
     margin-bottom: -0.1em;
   }
-}
-
-
-.featured .tagline {
-  margin-left: -0.04em; /* Adjust for kerning to align flush left */
-}
-
-.featured .largecopy {
 }
 
 .featured .copy {
@@ -381,7 +373,7 @@ pre .c1 {
 }
 
 .intro_area {
-  margin-top: 2.5em;
+  margin-top: 35px;
 }
 
 #intro {
@@ -417,10 +409,14 @@ pre .c1 {
   text-align: center;
   font-size: 0.8em;
   width: 30%;
-  margin-bottom: 2em;
+  /*padding-bottom: 2em;*/
 }
 
 #facts {
+  margin-top: 40px;
+}
+
+#facts_content {
   padding-top: 2em;
   padding-bottom: 2em;
   font-size: 0.9em;
@@ -464,7 +460,6 @@ pre .c1 {
   }
 }
 
-
 .benefit .copy {
   margin-top: 0.8em;
 }
@@ -474,8 +469,7 @@ pre .c1 {
 }
 
 #helloworld_container {
-  margin-top: 2.3em;
-  margin-bottom: 2em;
+  padding-top: 30px;
 }
 
 #helloworld_image {
@@ -501,12 +495,8 @@ pre .c1 {
 /* iPhones and smaller
 */
 @media (max-device-width: 640px) {
-  #helloworld pre {
-    font-size: 1.5em;
-    width: 100%;
-  }
   #helloworld_container {
-    margin-top: 0;
+    /*margin-top: 0;*/
   }
 }
 
