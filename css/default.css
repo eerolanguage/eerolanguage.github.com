@@ -306,7 +306,6 @@ pre .c1 {
   margin-bottom: -0.06em;
 }
 
-
 /* iPads and smaller
 */
 @media (max-device-width: 768px) {
@@ -834,9 +833,10 @@ p strong {
 }
  
 pre.code_sample {
-  border: 2px;
+  border: 1px;
   border-style: solid;
   border-color: #D6D6D6;
+  border-radius: 0.4em;
   line-height: 1.3em;
   padding: 2em;
   padding-bottom: 1em;
@@ -903,11 +903,6 @@ pre.code_sample {
 
 #features_banner {
   margin-top: 1.5em;
-}
-
-#whatiseero {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
 }
 
 

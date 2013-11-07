@@ -1,6 +1,5 @@
 <span class="k">#import</span> <span class="s">&lt;Foundation/Foundation.h&gt</span>
 
-
 <span class="k">@interface</span> FileHelper : <span class="kt">NSObject</span>
 
 <span class="k">@property</span> (<span class="k">readonly</span>) <span class="kt">NSString*</span> name;
