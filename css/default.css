@@ -854,13 +854,13 @@ p strong {
   width: 24em;
   min-width: 22em;
   width: 40%;
-  margin-top: 12px;
+  margin-top: 2em;
   margin-bottom: 2em;
 }
 
 #my_pic {
   float: inherit;
-  margin-top: 24px;
+  margin-top: 2.75em;
   width: 24em;
   margin-bottom: 2em;
   padding-right: 3em;
