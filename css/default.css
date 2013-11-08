@@ -520,6 +520,9 @@ pre .c1 {
 /* iPads and smaller
 */
 @media (max-device-width: 768px) {
+  #helloworld_container {
+    width: 15em;
+  }
   #helloworld_image {
     width: 100%;
     min-width: 0;
@@ -537,6 +540,7 @@ pre .c1 {
 @media (max-device-width: 640px) {
   #helloworld_container {
     /*margin-top: 0;*/
+    width: 100%;
   }
 }
 
