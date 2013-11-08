@@ -145,7 +145,7 @@ nav li a:hover {
 .contentmargins {
   width: 80%;
   margin: 0 auto;
-  max-width: 950px;
+  /*max-width: 950px;*/
 }
 
 .fullwidth {
@@ -508,9 +508,9 @@ pre .c1 {
 
 #helloworld_container {
   padding-top: 40px;
-  /*width: 50%;*/
-  /*min-width: 19em;*/
-  width: 19em;
+  width: 50%;
+  min-width: 19em;
+  /*width: 19em;*/
 }
 
 #helloworld_image {
@@ -522,6 +522,7 @@ pre .c1 {
 @media (max-device-width: 768px) {
   #helloworld_container {
     width: 15em;
+    min-width: 0;
   }
   #helloworld_image {
     width: 100%;
@@ -950,11 +951,13 @@ p strong {
  */
 
 #objc_sample {
+  clear: both;
   margin-top: 1.5em;
   margin-bottom: 1em;
 }
 
 #eero_sample {
+  clear: both;
   margin-top: 2em;
   margin-bottom: 3em;
 }
