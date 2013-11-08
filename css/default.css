@@ -413,15 +413,16 @@ pre .c1 {
 */
 @media (max-device-width: 768px) {
   #intro {
-  padding-right: 0.5em;
+  /*padding-right: 0.5em;*/
   }
 }
 
 /* iPhones and smaller
 */
 @media (max-device-width: 640px) {
-  #intro {
+  #intro_content {
     width: 100%;
+    margin-right: 0;
   }
 }
 
