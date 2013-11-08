@@ -479,7 +479,7 @@ pre .c1 {
   margin-top: 1.5em;
   margin-right: 1.5em;
   width: 30%;
-  min-width: 15em;
+  min-width: 13em;
 /*  min-height: 9em; */
 }
 
@@ -815,12 +815,12 @@ p strong {
   margin-top: 1.5em;
   padding-right: 3em;
   width: 40%;
-  min-width: 24em;
+  min-width: 22em;
 }
 
 #furniture {
   float: inherit;
-  margin-top: 1.5em;
+  margin-top: 40px;
   width: 24em;
 }
 
@@ -852,15 +852,15 @@ p strong {
 #about_me {
   float: inherit;
   width: 24em;
-  min-width: 24em;
+  min-width: 22em;
   width: 40%;
-  margin-top: 2em;
+  margin-top: 12px;
   margin-bottom: 2em;
 }
 
 #my_pic {
   float: inherit;
-  margin-top: 1.5em;
+  margin-top: 24px;
   width: 24em;
   margin-bottom: 2em;
   padding-right: 3em;
@@ -993,7 +993,7 @@ pre.code_sample {
   float: inherit;
   margin-top: 1.5em;
   margin-right: 1.5em;
-  width: 24em;
+  width: 23em;
 /*  min-width: 45%; */
   min-height: 9em;
 }
