@@ -8,66 +8,8 @@ position: 6
 <div class="featured fullwidth floating featuredbackgroundcolor">
   <div class="intro_area contentmargins">
     <div class="floating">
-<!-- 
-      <div class="logo logocolor">eero</div>
-      <div class="tagline logocolor">objective-c, evolved</div>
- -->
-    </div>
-  </div>
-</div>
-<!-- 
-<div class="contact_banner floating fullwidth largecopy bannertext bannerforegroundcolor bannerbackgroundcolor">
-  <div class="contentmargins">
-    contact info
-  </div>
-</div>
- -->
-<div class="featured fullwidth floating featuredbackgroundcolor">
-  <div class="contact_info contentmargins">
-    <div class="floating copycolor">
-      <div class="contact_link">
-        <div class="largecopy">
-          email
-        </div>
-        <div class="copy">
-          <script language="JavaScript">
-          var username = "info";
-          var hostname = "eerolanguage.org";
-          var linktext = username + "@" + hostname ;
-          document.write("<a href='" + "mail" + "to:" + username +
-                                  "@" + hostname + "'>" + linktext + "</a>");
-          </script>
-        </div>
-      </div>
-      <div class="contact_link">
-        <div class="largecopy">
-          twitter
-        </div>
-        <div>
-          <a href="http://twitter.com/andyarvanitis" class="copy">
-            @andyarvanitis
-          </a>
-        </div>
-      </div>
-      <div class="contact_link">
-        <div class="largecopy">
-          github
-        </div>
-        <div>
-          <a href="https://github.com/eerolanguage" class="copy">
-            eerolanguage
-          </a>
-        </div>
-      </div>
-      <div class="contact_link">
-        <div class="largecopy">
-          slideshare
-        </div>          
-        <div>
-          <a href="http://www.slideshare.net/andyarvanitis" class="copy">
-            andyarvanitis
-          </a>
-        </div>
+      <div id="github_intro" class="floating largecopy copycolor">
+        Comments? Questions? You can reach me using the methods below.
       </div>
     </div>
   </div>
@@ -76,7 +18,18 @@ position: 6
 <div class="fullwidth floating">
   <div class="floating fullwidth largecopy bannertext bannerforegroundcolor bannerbackgroundcolor">
     <div class="contentmargins">
-      about eero
+      <span class="floating">
+        eero
+      </span>
+      <script language="JavaScript">
+      var username = "info";
+      var hostname = "eerolanguage.org";
+      var linktext = "";
+      var linkclasses = "email_profile floating";
+      document.write("<a href='" + "mail" + "to:" + username +
+                              "@" + hostname + "'" + " class='" + linkclasses + "'" + ">" + linktext + "</a>");
+      </script>
+      <a href="http://github.com/eerolanguage" class="github_profile floating"></a>
     </div>
   </div>
 </div>
@@ -85,6 +38,7 @@ position: 6
   <div class="contentmargins">
     <div id="about">
       <div id="saarinen" class="copy copycolor">
+        <h1>About Eero</h1>
         The first idea I had for eero was to remove the “slum of braces” from
         Objective-C. My wife had told me about the idea behind the design of the
         Tulip chair and Pedestal table by the Finnish-American architect and
@@ -108,7 +62,13 @@ position: 6
 
 <div class="floating fullwidth largecopy bannertext bannerforegroundcolor bannerbackgroundcolor">
   <div class="contentmargins">
-    about me
+    <span class="floating">
+      andy arvanitis
+    </span>
+    <a href="http://twitter.com/andyarvanitis" class="twitter_profile floating"></a>
+    <a href="http://github.com/andyarvanitis" class="github_profile floating"></a>
+    <a href="http://www.linkedin.com/pub/andy-arvanitis/2/4a8/b1" class="linkedin_profile floating"></a>
+    <a href="http://slideshare.com/andyarvanitis" class="slideshare_profile floating"></a>
   </div>
 </div>
 
@@ -120,6 +80,7 @@ position: 6
           <img src="/images/andy.png" alt="andy"></img>
           </figure>
           <div id="about_me" class="copy copycolor">
+            <h1>About me</h1>
             After receiving my B.S.E.E. from the University of Michigan, I went to
             work in software development. I’ve worked for large companies like Nokia,
             Texas Instruments, and McDonnell Douglas (a.k.a Boeing); some medium and

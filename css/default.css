@@ -186,6 +186,12 @@ nav li a:hover {
   line-height: 1.4em;
 }
 
+.copy h1 {
+  font-family: 'Museo Sns W04 Cond 700', 'Arial-Bold';
+  font-size: 1.3em;
+  line-height: 2em;
+}
+
 /* iPhones and smaller
 */
 @media (max-device-width: 640px) {
@@ -807,8 +813,52 @@ p strong {
   padding-top: 1em;
 }
 
-/*-------------- Code sample --------------*/
+.github_profile {
+   margin-left: 1em;
+   width: 1.2em;
+   height: 1.2em;
+   display: block;
+   background: url('/images/octocat-32.png') no-repeat center;
+   background-size: contain;
+}
 
+.twitter_profile {
+   margin-left: 2em;
+   width: 1.3em;
+   height: 1.3em;
+   display: block;
+   background: url('/images/Twitter_logo_white.png') no-repeat center;
+   background-size: contain;
+}
+
+.slideshare_profile {
+   margin-left: 1em;
+   width: 1.2em;
+   height: 1.2em;
+   display: block;
+   background: url('/images/slideshare.png') no-repeat center;
+   background-size: contain;
+}
+
+.linkedin_profile {
+   margin-left: 1em;
+   width: 1.2em;
+   height: 1.2em;
+   display: block;
+   background: url('/images/linkedin.png') no-repeat center;
+   background-size: contain;
+}
+
+.email_profile {
+   margin-left: 2em;
+   width: 1.2em;
+   height: 1.2em;
+   display: block;
+   background: url('/images/email.png') no-repeat center;
+   background-size: contain;
+}
+
+/*-------------- Code sample --------------*/
 
 /* 
 #side_by_side_code {
