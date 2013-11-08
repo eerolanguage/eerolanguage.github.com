@@ -96,6 +96,8 @@ nav li a {
   min-width: 8em;
 
   font-family: 'Museo Sans W01 500', Helvetica;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 1.2em;
   text-align: center;
   color: rgba(153,153,153,1);
@@ -149,12 +151,16 @@ nav li a:hover {
 }
 
 .logo {
-  font-family: 'MicrogrammaW01-MediumEx', Helvetica;
+  font-family: 'MicrogrammaW01-MediumEx', Helvetica-Bold;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 7em;
 }
 
 .tagline {
   font-family: 'MicrogrammaW01-MediumEx', Helvetica;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 2em;
 }
 
@@ -167,7 +173,9 @@ nav li a:hover {
 }
 
 .largecopy {
-  font-family: 'Museo Sans W01 300', Helvetica;
+  font-family: 'Museo Sans W01 300', Helvetica-Light, Helvetica;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 1.5em;
   line-height: 1.2em;
 }
@@ -181,13 +189,17 @@ nav li a:hover {
 }
 
 .copy {
-  font-family: 'Museo Sans W01 500', Arial;
+  font-family: 'Museo Sans W01 500', Helvetica;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 1em;
   line-height: 1.4em;
 }
 
 .copy h1 {
-  font-family: 'Museo Sns W04 Cond 700', 'Arial-Bold';
+  font-family: 'Museo Sns W04 Cond 700', Helvetica-Bold;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 1.3em;
   line-height: 2em;
 }
@@ -201,7 +213,9 @@ nav li a:hover {
 }
 
 .smallcopy {
-  font-family: 'Museo Sans W01 500', Arial;
+  font-family: 'Museo Sans W01 500', Helvetica-Light;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 0.7em;
 }
 
@@ -434,12 +448,16 @@ pre .c1 {
 }
 
 #facts span {
-  font-family: 'Museo Sns W04 Cond 700', Helvetica;
+  font-family: 'Museo Sns W04 Cond 700', Helvetica-Bold;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 #dfquote {
   margin-top: 1em;
-  font-family: "MuseoSansW01-500Italic";
+  font-family: "MuseoSansW01-500Italic", Helvetica-Oblique;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 0.9em;
 }
 
@@ -476,7 +494,9 @@ pre .c1 {
 }
 
 .benefit span {
-  font-family: 'Museo Sns W04 Cond 700', Helvetica;
+  font-family: 'Museo Sns W04 Cond 700', Helvetica-Bold;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 #helloworld_container {
@@ -517,48 +537,66 @@ pre .c1 {
 /*-------------- Documentation --------------*/
 
 h1 {
-  font-family: 'MyriadW08-BoldCondensed 1166610', Helvetica;
+  font-family: 'MyriadW08-BoldCondensed 1166610', Georgia-Bold;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 1.6em;
   line-height: 1.2em;
   color:#444444;
 }
 
 h1 em {
-  font-family: 'MyriadW08-BoldCondensed 1167283', Helvetica;
+  font-family: 'MyriadW08-BoldCondensed 1167283', Georgia-BoldItalic;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 h2 {
-  font-family: 'MyriadW08-SemiboldConde', Helvetica;
+  font-family: 'MyriadW08-SemiboldConde',  Georgia-Bold;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 1.6em;
   line-height: 1.2em;
   color:#444444;
 }
 
 h2 em {
-  font-family: 'MyriadW08-SemiboldCondI', Arial;
+  font-family: 'MyriadW08-SemiboldCondI', Georgia-BoldItalic;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 h3 {
-  font-family: 'MyriadW08-SemiboldConde', Arial;
+  font-family: 'MyriadW08-SemiboldConde', Georgia-Bold;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 1.3em;
   color:#444444;
 }
 
 h3 em {
-  font-family: 'MyriadW08-SemiboldCondI', Arial;
+  font-family: 'MyriadW08-SemiboldCondI', Georgia-BoldItalic;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 h4 {
-  font-family: 'Myriad Pro 1167301', Arial;
+  font-family: 'Myriad Pro 1167301', Georgia;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 1.1em;
 }
 
 h4 em {
-  font-family: 'Myriad Pro 1167293', Arial;
+  font-family: 'Myriad Pro 1167293', Georgia-Italic;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 p {
-  font-family: 'Myriad Pro Light 1166622', Arial;
+  font-family: 'Myriad Pro Light 1166622', Georgia;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 1.1em;
   line-height: 1.4em;
   margin-bottom: 1em;
@@ -566,13 +604,15 @@ p {
 }
 
 p em { 
-  font-family: 'Myriad Pro Light 1167297', 'Arial-Bold';
-  font-weight: normal;
+  font-family: 'Myriad Pro Light 1167297', Georgia-Italic;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 p strong { 
-  font-family: 'Myriad Pro 1167301', 'Arial-Bold';
-  font-weight: normal;
+  font-family: 'Myriad Pro 1167301', Georgia-BoldItalic;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 #documentation {
@@ -606,7 +646,6 @@ p strong {
 #documentation ul {
   list-style-position: outside;
   list-style-type: disc;
-  font-family: 'Museo Sans W01 500', Arial, Helvetica;
   margin-left: 1em;
 }
 
@@ -614,7 +653,9 @@ p strong {
   border: 1px;
   border-style: solid;
   border-color: #D6D6D6;
-  font-family: 'Myriad Pro 1167301', Arial, Helvetica;
+  font-family: 'Myriad Pro 1167301', Georgia;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 0.9em;
   line-height: 1.2em;
   color: #444444;
@@ -633,7 +674,8 @@ p strong {
 }
 
 #documentation table strong {
-  font-family: 'MyriadW08-SemiboldConde', Arial, Helvetica;
+  font-family: 'MyriadW08-SemiboldConde', Georgia-Bold;
+  font-style: normal !important;
   font-weight: normal !important;
   font-size: 1.2em;
 }
@@ -648,15 +690,21 @@ p strong {
 }
 
 #documentation #toc h1 {
-  font-family: 'Museo Sns W04 Cond 700';
+  font-family: 'Museo Sns W04 Cond 700', Georgia-Bold;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 #documentation #toc h1 em {
-  font-family: 'MuseoSnsW04-Cond700It';
+  font-family: 'MuseoSnsW04-Cond700It', Georgia-BoldItalic;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 #documentation #toc h2 {
-  font-family: 'Museo Sns W04 Cond 700';
+  font-family: 'Museo Sns W04 Cond 700', Georgia-Bold;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 1.3em;
   margin: 0;
   padding: 0;
@@ -665,11 +713,15 @@ p strong {
 }
 
 #documentation #toc h2 em {
-  font-family: 'MuseoSnsW04-Cond700It';
+  font-family: 'MuseoSnsW04-Cond700It', Georgia-BoldItalic;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 #documentation #toc h3 {
-  font-family: 'Museo Sans W01 500';
+  font-family: 'Museo Sans W01 500', Georgia;
+  font-style: normal !important;
+  font-weight: normal !important;
   font-size: 1.0em;
   margin: 0;
   padding: 0;
@@ -678,7 +730,9 @@ p strong {
 }
 
 #documentation #toc h3 em {
-  font-family: 'MuseoSansW01-500Italic';
+  font-family: 'MuseoSansW01-500Italic', Georgia-Italic;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 /* iPhones and smaller
@@ -778,7 +832,9 @@ p strong {
 
 #furniture figcaption {
   padding-top: 0.75em;
-  font-family: 'Museo Sans W01 300', Helvetica;
+  font-family: 'Museo Sans W01 300', Helvetica-Light, Helvetica;
+  font-style: normal !important;
+  font-weight: normal !important;
   text-align: right;
 }
 
@@ -949,7 +1005,9 @@ pre.code_sample {
 }
 
 .feature span {
-  font-family: 'Museo Sns W04 Cond 700', Helvetica;
+  font-family: 'Museo Sns W04 Cond 700', Helvetica-Bold;
+  font-style: normal !important;
+  font-weight: normal !important;
 }
 
 .feature ul {
