@@ -56,7 +56,7 @@ html, body {
 }
 
 /*------------ For sticky footer ------------*/
-
+/*
 html, body, #big_container { 
   height: 100%; 
 }
@@ -68,6 +68,12 @@ body > #big_container {
 
 #big_content { 
   padding-bottom: 3em; 
+}
+*/
+
+/* Until sticky footer works properly with iOS */
+#big_content {
+  min-height: 1200px;
 }
 
 /*------------ Navigation menu ------------*/
