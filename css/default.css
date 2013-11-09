@@ -56,24 +56,47 @@ html, body {
 }
 
 /*------------ For sticky footer ------------*/
-/*
-html, body, #big_container { 
+
+html, body { 
   height: 100%; 
 }
 
-body > #big_container { 
-  height: auto; 
+#big_container {
   min-height: 100%; 
 }
 
-#big_content { 
-  padding-bottom: 3em; 
-}
-*/
-
-/* Until sticky footer works properly with iOS */
 #big_content {
-  min-height: 1200px;
+  /*overflow: auto;*/
+  padding-bottom: 48px; /* must be same height as the footer */
+}  
+
+#footer {
+  position: relative;
+  clear:both;
+  margin-top: -48px; /* negative value of footer height */
+  height: 48px;
+}
+
+/* iPads and smaller
+*/
+@media (max-device-width: 768px) {
+  html, body { 
+    height: auto; 
+  }
+  #big_container {
+    min-height: 1140px; 
+  }
+  #footer {
+    margin-top: 0;
+  }
+}
+
+/* iPhones and smaller
+*/
+@media (max-device-width: 640px) {
+  #big_container {
+    min-height: 1340px; 
+  }
 }
 
 /*------------ Navigation menu ------------*/
@@ -146,6 +169,10 @@ nav li a:hover {
   width: 80%;
   margin: 0 auto;
   /*max-width: 950px;*/
+}
+
+.contentbottommargins {
+  margin-bottom: 7em;
 }
 
 .fullwidth {
@@ -355,13 +382,7 @@ pre .c1 {
 
 /*-------------- Footer --------------*/
 
-#footer {
- clear: both;
- position: relative;
- z-index: 10;
- height: 3em;
- margin-top: 0;
-}
+/* Since now using sticky footer, see #footer definition near top */
 
 #copyright {
   color: #DFDFDF;
@@ -380,7 +401,6 @@ pre .c1 {
     font-size: 1.5em;
   }
 }
-
 
 /*-------------- Home --------------*/
 
@@ -471,7 +491,6 @@ pre .c1 {
 .benefits {
   position: relative;
   float: left;
-  padding-bottom: 2em;
 }
 
 .benefit {
@@ -630,7 +649,6 @@ p strong {
 #documentation {
   position: relative;
   margin-top: 2em;
-  padding-bottom: 2em;
 }
 
 #documentation h2 {
@@ -855,15 +873,14 @@ p strong {
   width: 24em;
   min-width: 22em;
   width: 40%;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 4em;
 }
 
 #my_pic {
   float: inherit;
   margin-top: 2.75em;
   width: 24em;
-  margin-bottom: 2em;
+  /*margin-bottom: 2em;*/
   padding-right: 3em;
 }
 
@@ -964,7 +981,6 @@ p strong {
 #eero_sample {
   clear: both;
   margin-top: 2em;
-  margin-bottom: 3em;
 }
 
 .code_sample {
@@ -994,7 +1010,6 @@ pre.code_sample {
 .features {
   position: inherit;
   float: left;
-  padding-bottom: 2em;
 }
 
 .feature {
