@@ -423,9 +423,9 @@ pre .c1 {
 }
 
 #intro_content {
-  width: 42%;
-  min-width: 24em;
-  margin-right: 5%;
+  width: 40%;
+  min-width: 23em;
+  margin-right: 3.5%;
 }
 
 #intro {
@@ -529,6 +529,7 @@ pre .c1 {
   padding-top: 40px;
   width: 50%;
   min-width: 19em;
+  margin-right: -3em; /* cheat the margins a bit to help keep the image next to the intro */
   /*width: 19em;*/
 }
 
@@ -540,7 +541,7 @@ pre .c1 {
 */
 @media (max-device-width: 768px) {
   #helloworld_container {
-    width: 15em;
+    width: 17em;
     min-width: 0;
   }
   #helloworld_image {
