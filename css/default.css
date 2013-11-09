@@ -84,7 +84,7 @@ html, body {
     height: auto; 
   }
   #big_container {
-    min-height: 1140px; 
+    min-height: 1400px; 
   }
   #footer {
     margin-top: 0;
@@ -95,7 +95,7 @@ html, body {
 */
 @media (max-device-width: 640px) {
   #big_container {
-    min-height: 1340px; 
+    min-height: 1600px; 
   }
 }
 
@@ -172,7 +172,7 @@ nav li a:hover {
 }
 
 .contentbottommargins {
-  margin-bottom: 7em;
+  margin-bottom: 8em;
 }
 
 .fullwidth {
