@@ -533,6 +533,11 @@ pre .c1 {
   /*width: 19em;*/
 }
 
+#helloworld_container a:hover {
+  opacity: 0.8;
+  background-position: 0 0;
+}
+
 #helloworld_image {
   float: inherit;
 }
