@@ -458,10 +458,11 @@ pre .c1 {
 
 #download {
   clear: both;
-  text-align: center;
-  font-size: 0.8em;
-  width: 30%;
+/*  text-align: center;*/
+/*  font-size: 0.8em;*/
+/*  width: 30%;*/
   /*padding-bottom: 2em;*/
+  padding: 0.6em;
 }
 
 #facts {
