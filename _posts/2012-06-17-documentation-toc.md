@@ -130,8 +130,9 @@ The preprocessor
 
 Reserved symbols for future features
 ------------------------------------
-### [import](#reserved)
-### [=>](#reserved)
 
+### [import](#reserved)
+
+### [=>](#reserved)
 
 --------------------------------------
