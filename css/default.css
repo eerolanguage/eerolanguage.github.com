@@ -362,7 +362,7 @@ pre .c1 {
 
 /* iPads and smaller
 */
-@media (max-device-width: 768p9
+@media (max-device-width: 768px) {
   .featured .logo {
     margin-top: -0.25em;   /* Adjust for kerning(?) to align flush top */
     margin-bottom: -0.1em;
