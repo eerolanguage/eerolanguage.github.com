@@ -124,7 +124,7 @@ nav li a {
   width: 16.66%;   /* NOTE: based on number of menu items */
   min-width: 8em;
 
-  font-family: 'Museo Sans W01 500', Helvetica;
+  font-family: 'Source Sans Pro', Helvetica;
   font-style: normal !important;
   font-weight: normal !important;
   font-size: 1.2em;
@@ -184,17 +184,17 @@ nav li a:hover {
 }
 
 .logo {
-  font-family: 'MicrogrammaW01-MediumEx', Helvetica-Bold;
+  font-family: 'Michroma', Helvetica-Bold;
   font-style: normal !important;
   font-weight: normal !important;
-  font-size: 7em;
+  font-size: 5em;
 }
 
 .tagline {
-  font-family: 'MicrogrammaW01-MediumEx', Helvetica;
+  font-family: 'Michroma', Helvetica;
   font-style: normal !important;
   font-weight: normal !important;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 /* iPhones and smaller
@@ -206,9 +206,9 @@ nav li a:hover {
 }
 
 .largecopy {
-  font-family: 'Museo Sans W01 300', Helvetica-Light, Helvetica;
+  font-family: 'Source Sans Pro', Helvetica-Light, Helvetica;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 300 !important;
   font-size: 1.5em;
   line-height: 1.2em;
 }
@@ -222,7 +222,7 @@ nav li a:hover {
 }
 
 .copy {
-  font-family: 'Museo Sans W01 500', Helvetica;
+  font-family: 'Source Sans Pro', Helvetica;
   font-style: normal !important;
   font-weight: normal !important;
   font-size: 1em;
@@ -230,9 +230,9 @@ nav li a:hover {
 }
 
 .copy h1 {
-  font-family: 'Museo Sns W04 Cond 700', Helvetica-Bold;
+  font-family: 'Source Sans Pro', Helvetica-Bold;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 600 !important;
   font-size: 1.3em;
   line-height: 2em;
 }
@@ -246,7 +246,7 @@ nav li a:hover {
 }
 
 .smallcopy {
-  font-family: 'Museo Sans W01 500', Helvetica-Light;
+  font-family: 'Source Sans Pro', Helvetica-Light;
   font-style: normal !important;
   font-weight: normal !important;
   font-size: 0.7em;
@@ -320,7 +320,7 @@ a:hover {
 /*-------------- Code blocks --------------*/
 
 pre {
-  font-family: 'Consolas W99 Regular', Consolas, Menlo, Courier, monospace;
+  font-family: Consolas, Menlo, 'Droid Sans Mono', Courier, monospace;
   font-size: 1em;
   line-height: 1.6;
   overflow: hidden;
@@ -332,12 +332,12 @@ pre {
 }
 
 pre em {
-  font-family: 'Consolas W99 Italic', 'Consolas-Italic', 'Menlo-Italic', 'Courier-Oblique';
+  font-family: 'Consolas-Italic', 'Menlo-Italic', 'Courier-Oblique';
   font-style: normal !important;
 }
 
 pre .c1 {
-  font-family: 'Consolas W99 Italic', 'Consolas-Italic', 'Menlo-Italic', 'Courier-Oblique';
+  font-family: 'Consolas-Italic', 'Menlo-Italic', 'Courier-Oblique';
   font-style: normal !important;
 }
 
@@ -354,15 +354,15 @@ pre .c1 {
 }
 
 .featured .logo {
-  margin-left: -0.02em; /* Adjust for kerning to align flush left */
+  margin-left: -0.06em; /* Adjust for kerning to align flush left */
   margin-top: -0.38em;   /* Adjust for kerning(?) to align flush top */
-  margin-bottom: -0.06em;
   padding-top: 18px;
+  padding-bottom: 9px;
 }
 
 /* iPads and smaller
 */
-@media (max-device-width: 768px) {
+@media (max-device-width: 768p9
   .featured .logo {
     margin-top: -0.25em;   /* Adjust for kerning(?) to align flush top */
     margin-bottom: -0.1em;
@@ -477,16 +477,16 @@ pre .c1 {
 }
 
 #facts span {
-  font-family: 'Museo Sns W04 Cond 700', Helvetica-Bold;
+  font-family: 'Source Sans Pro', Helvetica-Bold;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 600 !important;
 }
 
 #dfquote {
   margin-top: 1em;
-  font-family: "MuseoSansW01-500Italic", Helvetica-Oblique;
-  font-style: normal !important;
-  font-weight: normal !important;
+  font-family: 'Source Sans Pro', Helvetica-Oblique;
+  font-style: italic !important;
+  font-weight: 400 !important;
   font-size: 0.9em;
 }
 
@@ -522,9 +522,9 @@ pre .c1 {
 }
 
 .benefit span {
-  font-family: 'Museo Sns W04 Cond 700', Helvetica-Bold;
+  font-family: 'Source Sans Pro', Helvetica-Bold;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 600 !important;
 }
 
 #helloworld_container {
@@ -576,66 +576,66 @@ pre .c1 {
 /*-------------- Documentation --------------*/
 
 h1 {
-  font-family: 'MyriadW08-BoldCondensed 1166610', Georgia-Bold;
+  font-family: 'Source Sans Pro', Georgia-Bold;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 600 !important;
   font-size: 1.6em;
   line-height: 1.2em;
   color:#444444;
 }
 
 h1 em {
-  font-family: 'MyriadW08-BoldCondensed 1167283', Georgia-BoldItalic;
-  font-style: normal !important;
-  font-weight: normal !important;
+  font-family: 'Source Sans Pro', Georgia-BoldItalic;
+  font-style: italic !important;
+  font-weight: 600 !important;
 }
 
 h2 {
-  font-family: 'MyriadW08-SemiboldConde',  Georgia-Bold;
+  font-family: 'Source Sans Pro', Georgia-Bold;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 600 !important;
   font-size: 1.6em;
   line-height: 1.2em;
   color:#444444;
 }
 
 h2 em {
-  font-family: 'MyriadW08-SemiboldCondI', Georgia-BoldItalic;
-  font-style: normal !important;
-  font-weight: normal !important;
+  font-family: 'Source Sans Pro', Georgia-BoldItalic;
+  font-style: italic !important;
+  font-weight: 600 !important;
 }
 
 h3 {
-  font-family: 'MyriadW08-SemiboldConde', Georgia-Bold;
+  font-family: 'Source Sans Pro', Georgia-Bold;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 600 !important;
   font-size: 1.3em;
   color:#444444;
 }
 
 h3 em {
-  font-family: 'MyriadW08-SemiboldCondI', Georgia-BoldItalic;
-  font-style: normal !important;
-  font-weight: normal !important;
+  font-family: 'Source Sans Pro', Georgia-BoldItalic;
+  font-style: italic !important;
+  font-weight: 600 !important;
 }
 
 h4 {
-  font-family: 'Myriad Pro 1167301', Georgia;
+  font-family: 'Source Sans Pro', Georgia;
   font-style: normal !important;
   font-weight: normal !important;
   font-size: 1.1em;
 }
 
 h4 em {
-  font-family: 'Myriad Pro 1167293', Georgia-Italic;
-  font-style: normal !important;
+  font-family: 'Source Sans Pro', Georgia-Italic;
+  font-style: italic !important;
   font-weight: normal !important;
 }
 
 p {
-  font-family: 'Myriad Pro Light 1166622', Georgia;
+  font-family: 'Source Sans Pro', Georgia;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 300 !important;
   font-size: 1.1em;
   line-height: 1.4em;
   margin-bottom: 1em;
@@ -643,15 +643,15 @@ p {
 }
 
 p em { 
-  font-family: 'Myriad Pro Light 1167297', Georgia-Italic;
-  font-style: normal !important;
-  font-weight: normal !important;
+  font-family: 'Source Sans Pro', Georgia-Italic;
+  font-style: italic !important;
+  font-weight: 300 !important;
 }
 
 p strong { 
-  font-family: 'Myriad Pro 1167301', Georgia-BoldItalic;
-  font-style: normal !important;
-  font-weight: normal !important;
+  font-family: 'Source Sans Pro', Georgia-BoldItalic;
+  font-style: italic !important;
+  font-weight: 600 !important;
 }
 
 #documentation {
@@ -691,7 +691,7 @@ p strong {
   border: 1px;
   border-style: solid;
   border-color: #D6D6D6;
-  font-family: 'Myriad Pro 1167301', Georgia;
+  font-family: 'Source Sans Pro', Georgia;
   font-style: normal !important;
   font-weight: normal !important;
   font-size: 0.9em;
@@ -712,9 +712,9 @@ p strong {
 }
 
 #documentation table strong {
-  font-family: 'MyriadW08-SemiboldConde', Georgia-Bold;
+  font-family: 'Source Sans Pro', Georgia-Bold;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 600 !important;
   font-size: 1.2em;
 }
 
@@ -723,26 +723,26 @@ p strong {
 }
 
 #documentation table code {
-  font-family: 'Consolas W99 Regular', Consolas, Menlo, Courier, monospace;
+  font-family: Consolas, Menlo, 'Droid Sans Mono', Courier, monospace;
   font-size: 0.8em;
 }
 
 #documentation #toc h1 {
-  font-family: 'Museo Sns W04 Cond 700', Georgia-Bold;
+  font-family: 'Source Sans Pro', Georgia-Bold;
   font-style: normal !important;
   font-weight: normal !important;
 }
 
 #documentation #toc h1 em {
-  font-family: 'MuseoSnsW04-Cond700It', Georgia-BoldItalic;
-  font-style: normal !important;
-  font-weight: normal !important;
+  font-family: 'Source Sans Pro', Georgia-BoldItalic;
+  font-style: italic !important;
+  font-weight: 600 !important;
 }
 
 #documentation #toc h2 {
-  font-family: 'Museo Sns W04 Cond 700', Georgia-Bold;
+  font-family: 'Source Sans Pro', Georgia-Bold;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 600 !important;
   font-size: 1.3em;
   margin: 0;
   padding: 0;
@@ -751,13 +751,13 @@ p strong {
 }
 
 #documentation #toc h2 em {
-  font-family: 'MuseoSnsW04-Cond700It', Georgia-BoldItalic;
-  font-style: normal !important;
-  font-weight: normal !important;
+  font-family: 'Source Sans Pro', Georgia-BoldItalic;
+  font-style: italic !important;
+  font-weight: 600 !important;
 }
 
 #documentation #toc h3 {
-  font-family: 'Museo Sans W01 500', Georgia;
+  font-family: 'Source Sans Pro', Georgia;
   font-style: normal !important;
   font-weight: normal !important;
   font-size: 1.0em;
@@ -768,8 +768,8 @@ p strong {
 }
 
 #documentation #toc h3 em {
-  font-family: 'MuseoSansW01-500Italic', Georgia-Italic;
-  font-style: normal !important;
+  font-family: 'Source Sans Pro', Georgia;
+  font-style: italic !important;
   font-weight: normal !important;
 }
 
@@ -870,9 +870,10 @@ p strong {
 
 #furniture figcaption {
   padding-top: 0.75em;
-  font-family: 'Museo Sans W01 300', Helvetica-Light, Helvetica;
+
+  font-family: 'Source Sans Pro', Helvetica-Light, Helvetica;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 300 !important;
   text-align: right;
 }
 
@@ -1057,9 +1058,9 @@ pre.code_sample {
 }
 
 .feature span {
-  font-family: 'Museo Sns W04 Cond 700', Helvetica-Bold;
+  font-family: 'Source Sans Pro', Helvetica-Bold;
   font-style: normal !important;
-  font-weight: normal !important;
+  font-weight: 600 !important;
 }
 
 .feature ul {
